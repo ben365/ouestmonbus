@@ -178,7 +178,7 @@ Non urgent:
 Crédits:
 ========
 
-© Copyright 2015 - [Benoît Meunier](mailto:benoit@systemd.info) & Karin Cibard.
+© Copyright 2015 - [Benoît Meunier](mailto:ouestmonbus@systemd.info) & Karin Cibard.
 
 ![licence GPL](/images/gplv3.png "licence GPL")
 [Où est mon bus ?](http://ouestmonbus.com) est un logiciel libre sous [licence GPL](http://www.gnu.org/licenses/gpl-3.0.fr.html).
