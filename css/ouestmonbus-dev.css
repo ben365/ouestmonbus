@@ -1,0 +1,91 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+.leaflet-popup-content-wrapper {
+  border-radius: 0px !important;
+}
+.leaflet-popup-close-button
+{
+  z-index: 1;
+}
+.line_content img { 
+  vertical-align: middle;
+}
+.line_content {
+  margin-top: 0.3rem;
+  padding-right: 0.3rem;
+  white-space: nowrap;
+}
+.station_name {
+  padding: 2.5px;
+  margin-bottom: 0.3rem;
+  text-align: center;
+  background-color: rgb(0, 75, 149);
+  overflow: hidden;
+  height: 22px;
+  vertical-align:middle;
+}
+.list_lines_inline {
+  padding-left: 0.3rem;
+  float: right;
+}
+.popup_title_inline {
+  overflow: hidden;
+}
+.header_station {
+  padding-bottom: 0.3rem;
+}
+.bus_info {
+  font-weight: bold;
+  padding: 0.3rem;
+}
+.line_info {
+  font-weight: bold;
+  padding: 0.3rem;
+}
+.bus_popup {
+  border:2px solid black;
+}
+.logo_approuve {
+  padding: 0px !important;
+}
+.bar_button {
+  margin-left: 0.4rem;
+}
+.help_button {
+  margin-bottom: 0.4rem;
+}
+.marginup10 {
+  margin-top: 0.4rem;
+}
+.app-container {
+  display: none;
+}
+#progressbar {
+  max-height: 1rem;
+}
+.marker-cluster-small div {
+ background-color: rgba(0, 75, 149, 0.6) !important;
+}
+.marker-cluster-small {
+ background-color: rgba(51, 111, 170, 0.6) !important; 
+}
+.marker-cluster-medium div {
+ background-color: rgba(0, 75, 149, 0.6) !important;
+}
+.marker-cluster-medium {
+ background-color: rgba(51, 111, 170, 0.6) !important; 
+}
+.marker-cluster-large div {
+ background-color: rgba(0, 75, 149, 0.6) !important;
+}
+.marker-cluster-large {
+ background-color: rgba(51, 111, 170, 0.6) !important; 
+}
+.marker-cluster div {
+  color: white;
+}

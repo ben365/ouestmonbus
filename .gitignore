@@ -1,0 +1,6 @@
+.DS_Store
+ouestmonbus.sublime-workspace
+/data/generator/node_modules/
+/data/GTFS/
+/data/downloads/*.zip
+

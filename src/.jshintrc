@@ -1,0 +1,14 @@
+{
+    "devel": false,
+    "globals": {
+    "$": false,
+    "L": false,
+    "pegasus": false,
+    "app": true,
+    "moment": false,
+    "_": false,
+    "MobileDetect": false,
+    "ProgressBar": false,
+    "leafletKnn": false
+  }
+}

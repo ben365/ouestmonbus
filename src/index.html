@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+
+  <meta charset='utf-8'>
+  <title>Où est mon bus ?</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+  <meta name='description' content='Carte interactive des stations de bus de Rennes, avec affichage des horaires en temps réel. - Rennes Métropole en accès libre, Sources des données : Data Keolis Rennes/Rennes Métropole'>
+  <meta name='keywords' content='Rennes, Horaire, Horaires, Temps Réel, OpenStreepMap, Star, Keolis'>
+  <meta name='author' content='Benoît Meunier'>
+
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+	<link rel='apple-touch-icon' sizes='57x57' href='/apple-touch-icon-57x57.png'>
+	<link rel='apple-touch-icon' sizes='60x60' href='/apple-touch-icon-60x60.png'>
+	<link rel='apple-touch-icon' sizes='72x72' href='/apple-touch-icon-72x72.png'>
+	<link rel='apple-touch-icon' sizes='76x76' href='/apple-touch-icon-76x76.png'>
+	<link rel='apple-touch-icon' sizes='114x114' href='/apple-touch-icon-114x114.png'>
+	<link rel='apple-touch-icon' sizes='120x120' href='/apple-touch-icon-120x120.png'>
+	<link rel='apple-touch-icon' sizes='144x144' href='/apple-touch-icon-144x144.png'>
+	<link rel='apple-touch-icon' sizes='152x152' href='/apple-touch-icon-152x152.png'>
+	<link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon-180x180.png'>
+	<link rel='icon' type='image/png' href='/favicon-32x32.png' sizes='32x32'>
+	<link rel='icon' type='image/png' href='/android-chrome-192x192.png' sizes='192x192'>
+	<link rel='icon' type='image/png' href='/favicon-96x96.png' sizes='96x96'>
+	<link rel='icon' type='image/png' href='/favicon-16x16.png' sizes='16x16'>
+	<link rel='manifest' href='/manifest.json'>
+	<meta name='msapplication-TileColor' content='#da532c'>
+	<meta name='msapplication-TileImage' content='/mstile-144x144.png'>
+	<meta name='theme-color' content='#ffffff'>
+
+  <link id='appcss' rel='stylesheet' href='https://ouestmonbus.xyz/css/ouestmonbus-dev.css'>
+
+  <link rel='stylesheet' href='https://ouestmonbus.xyz/css/metro.css'>
+  <link rel='stylesheet' href='https://ouestmonbus.xyz/css/metro-schemes.css'>
+  <link rel='stylesheet' href='https://ouestmonbus.xyz/css/metro-rtl.css'>
+  <link rel='stylesheet' href='https://ouestmonbus.xyz/css/metro-responsive.css'>
+  <link rel='stylesheet' href='https://ouestmonbus.xyz/css/metro-icons.css'>
+  <link rel='stylesheet' href='https://ouestmonbus.xyz/css/markercluster.default.css'>
+  <link rel='stylesheet' href='https://ouestmonbus.xyz/css/markercluster.css' > 
+  <link rel='stylesheet' href='https://ouestmonbus.xyz/css/leaflet.photon.css'>
+  <link rel='stylesheet' href='https://ouestmonbus.xyz/css/leaflet.css' > 
+
+</head>
+<body>
+<div class='app-bar fixed-top darcula' data-role='appbar'>
+  <ul class='app-bar-menu'>
+
+		<li><a href='javascript:void(0)' id='ouestmonbus_btn' class='bg-hover-green bg-emerald fg-white'><img style="height: 3.125rem; display: inline-block;" src='/android-chrome-72x72.png' alt='logo'></a></li>
+
+    <li class="bar_button"><a data-hint="Géolocalisation|positionnement automatique" data-hint-mode="2" data-hint-color="fg-white" data-hint-background="ribbed-cobalt" data-role="hint" class="bg-cobalt bg-hover-cyan" href='javascript:void(0)' id='localise_btn'><span class='mif-location'></span></a></li>
+
+    <li class="bar_button"><a data-hint="Rechercher|un lieu sur la carte" data-hint-mode="2" data-hint-color="fg-white" data-hint-background="ribbed-orange" data-role="hint" class="bg-orange bg-hover-amber" href='javascript:void(0)' id='address_btn'><span class='mif-search'></span></a></li>
+   
+    <li class="bar_button"><a data-hint="Infos @starbusmetro|en temps réel via Twitter" data-hint-mode="2" data-hint-color="fg-white" data-hint-background="ribbed-blue" data-role="hint" class="bg-blue bg-hover-cyan" href='javascript:void(0)' id='perturbations_twitter_btn'><span class='mif-feed3'></span></a></li>
+
+    <li class="bar_button"><a data-hint="Infos trafic|chargement en cours" data-hint-mode="2" data-hint-color="fg-white" data-hint-background="ribbed-red" data-role="hint" class="bg-red bg-hover-lightRed" href='javascript:void(0)' id='perturbations_btn'><span class='mif-info'></span></a></li>
+
+    <li class="bar_button"><a data-hint="Partager|via Twitter" data-hint-mode="2" data-hint-color="fg-white" data-hint-background="ribbed-blue" data-role="hint" class="bg-blue bg-hover-cyan" id="twitter_share" href='https://twitter.com/intent/tweet?text=O%C3%B9%20est%20mon%20bus%20%3F&amp;tw_p=tweetbutton&amp;url=http%3A%2F%2Fouestmonbus.com'><span class='mif-twitter'></span></a></li>
+
+    <li class="bar_button"><a data-hint="Aide|et informations" data-hint-mode="2" data-hint-color="fg-white" data-hint-background="ribbed-yellow" data-role="hint" class="bg-yellow bg-hover-lime" href='javascript:void(0)' id='about_btn'><span class='mif-question'></span></a></li>
+    
+	</ul>
+  <div class="app-bar-element place-right logo_approuve"><a target="_blank" href="javascript:void(0)"><img style="height: 3.125rem; display: inline-block;" class="place-right" src='https://ouestmonbus.xyz/images/approuve_star.jpg' alt='approuve STAR'></a></div>
+</div>
+<div id='map' class='map-container'></div>
+<div id='progressbar'></div>
+
+<div class='app-container'>
+<div data-role='dialog'  data-windows-style='true' data-color='fg-white'  data-background='bg-gray' data-close-button='true' id='about_dlg' class='padding20 dialogontop'>
+    <div class='panel collapsible collapsed' data-role='panel'>
+      <div class='heading'><span class='title'>A quoi ça sert ?</span></div>
+        <div class='content'>
+          <a href='javascript:void(0)'>ouestmonbus.com</a> est une carte interactive qui vous permet de consulter les prochains passages des bus de Rennes Métropole à leurs arrêts et de visualiser leurs positions en temps réel.<br>
+        </div>
+      </div>
+      <div class='marginup10 panel collapsible collapsed' data-role='panel'>
+        <div class='heading'><span class='title'>Comment ça marche ?</span></div>
+          <div style='overflow-y:scroll; height: 14rem;' class='content'>
+          <img class="help_button" src='https://ouestmonbus.xyz/images/picto/22/station.png' height='22' width='22' alt='bus'> Affiche les prochains passages des bus à l'arrêt.<br>
+          <img class="help_button" src='https://ouestmonbus.xyz/images/picto/22/bus_shadow.png' height='22' width='22' alt='bus'> Indique la position du bus, se rafraîchit toutes les minutes.<br>
+          <span class='help_button mif-sync-problem mif-lg'></span> Indique le décalage entre l'heure de passage prévue initialement et le temps réel.
+          <br>
+          <span class="help_button" style='padding-left:3px; padding-right:3px; background-color: #064baa;color:white;'>nom de l'arrêt</span> Centre l'arrêt sur la carte.<br>
+          <br>
+          <span class='help_button fg-white bg-cobalt mif-location padding10'></span> Essaye de vous géolocaliser, fonctionne uniquement si vous avez activé les permissions sur votre navigateur et votre appareil.<br>
+          <span class='help_button fg-white bg-orange mif-search padding10'></span> Ouvre un champs de saisi pour rechercher un lieu, par exemple "jardin saint geo".<br>
+          <span class='help_button fg-white bg-blue mif-feed3 padding10'></span> Affiche les infos en temps réel via le Twitter officiel du réseau Bus+Métro de Rennes Métropole.<br>
+          <span class='help_button fg-white bg-red mif-info padding10'></span> Affiche les perturbations en cours sur le réseau de bus.<br>
+          <span class='help_button fg-white bg-yellow mif-question padding10'></span> Affiche cette aide et les mentions légales.<br>
+          <span class='help_button fg-white bg-blue mif-twitter padding10'></span> Partage votre position sur Twitter. Par exemple <a target="_blank" href="/#map=19/48.11127/-1.67448">ce lien partage la position du jardin public Palais Saint-George</a>.
+          </div>
+      </div>
+    <div class='marginup10 panel collapsible collapsed' data-role='panel'>
+      <div class='heading'><span class='title'>Qui développe ce service ?</span></div>
+        <div class='content'>
+          <a href='javascript:void(0)'>ouestmonbus.com</a> est développé et administré par <a target='_blanck' href='https://systemd.info/wiki/public/about'>Benoît Meunier</a> avec la participation de Karin Cibard.<br>C'est un service gratuit (qui ne rapporte rien) sans garantie de fonctionnement.
+          <br>
+          Il est construit à l'aide des librairies <a href='http://leafletjs.com/'>Leaflet</a>, <a href='https://metroui.org.ua/'>Metro UI CSS</a>, <a href='https://jquery.com/'>jQuery</a>, <a href='http://hgoebl.github.io/mobile-detect.js/'>mobile-detect.js</a>, <a href='https://underscorejs.org/'>underscore.js</a> et <a href='http://momentjs.com/'>Moment.js</a>.<br>
+          Les données de carte proviennent des <a href='http://osm.org/copyright'>contributeurs de OpenStreetMap</a>, et les informations sur le service <a href='http://www.data.rennes-metropole.fr'>de Data Keolis Rennes/Rennes Métropole</a>.<br>Les services <a href='http://wiki.openstreetmap.org/wiki/FR:Nominatim'>Nominatim</a> et <a href="http://photon.komoot.de/">Photon</a> sont utilisés pour la localisation.
+          <br><br>
+          <a href='javascript:void(0)'>ouestmonbus.com</a> est un logiciel libre sous <a href='http://www.gnu.org/licenses/gpl-3.0.fr.html'>licence GPL</a>, les sources sont disponibles <a href='ouestmonbus.zip'>ici</a>.
+        </div>
+    </div>
+    <br>
+    <a class='button bg-white fg-black' href='/docs/'>En savoir plus</a>
+    <div class='place-right'>
+      <a href='javascript:void(0)' id='refresh_version'><span class='mif-loop2'></span></a>
+    </div>
+</div>
+
+<div data-role='dialog' data-windows-style='true' id='localisation_failed_dlg' data-background='bg-cobalt' data-color='fg-white' class='padding10 dialogontop' data-close-button='yes'>
+<div class='padding10'>
+<b>Impossible de vous localiser</b><br><br>Votre appareil ou votre navigateur n'est pas configuré pour vous permettre d'être localisé.<br>
+Utilisez la saisie d'un lieu au clavier.
+</div>
+<button id='localisation_failed_dlg_close' class='button place-right'>OK</button>
+</div>
+
+<div data-role='dialog' data-windows-style='true' id='localisation_nothere_dlg' data-background='bg-cobalt' data-color='fg-white' class='padding10 dialogontop' data-close-button='yes'>
+<div class='padding10'>
+<b>Impossible de vous localiser</b><br><br>Votre appareil ou votre navigateur indique que vous n'êtes pas dans Rennes Métropole.<br>
+Utilisez la saisie d'un lieu au clavier.
+</div>
+<button id='localisation_nothere_dlg_close' class='button place-right'>OK</button>
+</div>
+
+<div data-role='dialog' data-windows-style='true' id='api_time_failure_dlg' data-background='bg-red' data-color='fg-white' class='padding10 dialogontop' data-close-button='yes'>
+<b>Problème technique: l'heure remontée par le service OpenData Keolis indique un décalage de plus de 30 minutes.<br>
+Les données ne sont plus en temps réel.
+</b>
+</div>
+
+<div data-role='dialog' id='starbusmetro_timeline_dlg' data-width="23rem" data-background='bg-orange' data-color='fg-white' class='padding10 dialogontop' data-close-button='yes'>
+<a class='twitter-timeline' data-dnt='true' href='https://twitter.com/starbusmetro' data-widget-id='635128056206766082'>Tweets de @starbusmetro</a>
+</div>
+
+<div data-role='dialog' id='ouestmonbus_timeline_dlg' data-width="23rem" data-background='bg-emerald' data-color='fg-white' class='padding10 dialogontop' data-close-button='yes'>
+<a class='twitter-timeline' data-dnt='true' href='https://twitter.com/ouestmonbus' data-widget-id='637355060201156609'>Tweets de @ouestmonbus</a>
+</div>
+
+<div data-role='dialog' id='trafic_dlg' data-width="23rem" data-color='fg-black' data-background='bg-orange' data-close-button='true' class='padding10 dialogontop' data-close-button='true'>
+<div id='trafic_dlg_content' class='bg-white' style='overflow-y:scroll;'>
+</div>
+</div>
+
+  <script src='https://ouestmonbus.xyz/src/pegasus.js'></script>
+  <script src='https://ouestmonbus.xyz/src/jquery-2.1.4.js'></script>
+  <script src='https://ouestmonbus.xyz/src/metro.js'></script> 
+  <script src='https://ouestmonbus.xyz/src/leaflet.js'></script>
+  <script src='https://ouestmonbus.xyz/src/leaflet-knn.js'></script>
+  <script src='https://ouestmonbus.xyz/src/leaflet-markercluster.js'></script>
+  <script src='https://ouestmonbus.xyz/src/leaflet-movingmarker.js'></script>
+  <script src='https://ouestmonbus.xyz/src/leaflet-photon.js'></script>
+  <script src='https://ouestmonbus.xyz/src/moment.js'></script>
+  <script src='https://ouestmonbus.xyz/src/underscore.js'></script>
+  <script src='https://ouestmonbus.xyz/src/mobile-detect.js'></script>
+  <script src='https://ouestmonbus.xyz/src/progressbar.js'></script>
+
+  <script id='appscript' src='https://ouestmonbus.xyz/src/ouestmonbus-dev.js'></script>
+
+  <script>
+
+    var app = new OuestmonbusApp();
+    app.init();
+  </script>
+
+  <!-- Ce site est dédicacé à ma compagne et à notre futur bébé :) -->
+</body>
+</html>

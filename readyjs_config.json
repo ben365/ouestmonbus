@@ -1,0 +1,6 @@
+{
+  "output" : "./compile/",
+  "analyze" : false,
+  "keep" : false,
+  "no-recursive" : false
+}

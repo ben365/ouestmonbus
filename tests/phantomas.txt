@@ -1,0 +1,140 @@
+.-----------------------------------------------------------------------------------------------------------.
+| Report from 5 run(s) for <http://ouestmonbus.com/> using phantomas v1.11.0                                |
+|-----------------------------------------------------------------------------------------------------------|
+|             Metric             |     min      |     max      |   average    |    median    |    stddev    |
+|--------------------------------|--------------|--------------|--------------|--------------|--------------|
+| requests                       |            8 |            8 |            8 |            8 |            0 |
+| gzipRequests                   |            3 |            3 |            3 |            3 |            0 |
+| postRequests                   |            0 |            0 |            0 |            0 |            0 |
+| httpsRequests                  |            0 |            0 |            0 |            0 |            0 |
+| notFound                       |            0 |            0 |            0 |            0 |            0 |
+| bodySize [bytes]               |       190612 |       335614 |     273691.2 |       275190 |     47062.32 |
+| contentLength [bytes]          |       290996 |       354116 |     309235.4 |       299717 |     23351.25 |
+| httpTrafficCompleted [ms]      |          371 |         1974 |          793 |          483 |       604.18 |
+| timeToFirstByte [ms]           |           30 |         1373 |        313.2 |           36 |       530.45 |
+| timeToLastByte [ms]            |           35 |         1378 |        318.2 |           41 |       530.45 |
+| ajaxRequests                   |            0 |            0 |            0 |            0 |            0 |
+| htmlCount                      |            1 |            1 |            1 |            1 |            0 |
+| htmlSize [bytes]               |        12176 |        12176 |        12176 |        12176 |            0 |
+| cssCount                       |            1 |            1 |            1 |            1 |            0 |
+| cssSize [bytes]                |       111189 |       124711 |     114142.2 |       111189 |      5306.32 |
+| jsCount                        |            1 |            1 |            1 |            1 |            0 |
+| jsSize [bytes]                 |        47137 |       110257 |      62423.2 |        51727 |     24136.77 |
+| jsonCount                      |            0 |            0 |            0 |            0 |            0 |
+| jsonSize [bytes]               |            0 |            0 |            0 |            0 |            0 |
+| imageCount                     |            4 |            4 |            4 |            4 |            0 |
+| imageSize [bytes]              |        23478 |        23478 |        23478 |        23478 |            0 |
+| videoCount                     |            0 |            0 |            0 |            0 |            0 |
+| videoSize [bytes]              |            0 |            0 |            0 |            0 |            0 |
+| webfontCount                   |            1 |            1 |            1 |            1 |            0 |
+| webfontSize [bytes]            |        97016 |        97016 |        97016 |        97016 |            0 |
+| base64Count                    |            0 |            0 |            0 |            0 |            0 |
+| base64Size [bytes]             |            0 |            0 |            0 |            0 |            0 |
+| otherCount                     |            0 |            0 |            0 |            0 |            0 |
+| otherSize [bytes]              |            0 |            0 |            0 |            0 |            0 |
+| cacheHits                      |            0 |            0 |            0 |            0 |            0 |
+| cacheMisses                    |            8 |            8 |            8 |            8 |            0 |
+| cachePasses                    |            0 |            0 |            0 |            0 |            0 |
+| cachingNotSpecified            |            0 |            0 |            0 |            0 |            0 |
+| cachingTooShort                |            0 |            0 |            0 |            0 |            0 |
+| cachingDisabled                |            0 |            0 |            0 |            0 |            0 |
+| oldCachingHeaders              |            8 |            8 |            8 |            8 |            0 |
+| consoleMessages                |            0 |            0 |            0 |            0 |            0 |
+| cookiesSent [bytes]            |            0 |            0 |            0 |            0 |            0 |
+| cookiesRecv [bytes]            |            0 |            0 |            0 |            0 |            0 |
+| domainsWithCookies             |            0 |            0 |            0 |            0 |            0 |
+| documentCookiesLength [bytes]  |            0 |            0 |            0 |            0 |            0 |
+| documentCookiesCount           |            1 |            1 |            1 |            1 |            0 |
+| documentHeight [px]            |          768 |          768 |          768 |          768 |            0 |
+| commentsSize [bytes]           |           65 |           65 |           65 |           65 |            0 |
+| whiteSpacesSize [bytes]        |          411 |          411 |          411 |          411 |            0 |
+| DOMelementsCount               |          132 |          132 |          132 |          132 |            0 |
+| DOMelementMaxDepth             |            5 |            5 |            5 |            5 |            0 |
+| nodesWithInlineCSS             |           17 |           17 |           17 |           17 |            0 |
+| imagesScaledDown               |            1 |            1 |            1 |            1 |            0 |
+| imagesWithoutDimensions        |            2 |            2 |            2 |            2 |            0 |
+| DOMidDuplicated                |            0 |            0 |            0 |            0 |            0 |
+| hiddenContentSize [bytes]      |         8445 |         8445 |         8445 |         8445 |            0 |
+| DOMmutationsInserts            |            0 |            0 |            0 |            0 |            0 |
+| DOMmutationsRemoves            |            0 |            0 |            0 |            0 |            0 |
+| DOMmutationsAttributes         |            0 |            0 |            0 |            0 |            0 |
+| DOMqueries                     |           41 |           44 |         41.6 |           41 |          1.2 |
+| DOMqueriesWithoutResults       |            2 |            2 |            2 |            2 |            0 |
+| DOMqueriesById                 |            1 |            1 |            1 |            1 |            0 |
+| DOMqueriesByClassName          |            0 |            0 |            0 |            0 |            0 |
+| DOMqueriesByTagName            |           38 |           41 |         38.6 |           38 |          1.2 |
+| DOMqueriesByQuerySelectorAll   |            2 |            2 |            2 |            2 |            0 |
+| DOMinserts                     |           15 |           15 |           15 |           15 |            0 |
+| DOMqueriesDuplicated           |            3 |            3 |            3 |            3 |            0 |
+| DOMqueriesAvoidable            |            8 |           11 |          8.6 |            8 |          1.2 |
+| domains                        |            1 |            1 |            1 |            1 |            0 |
+| maxRequestsPerDomain           |            8 |            8 |            8 |            8 |            0 |
+| medianRequestsPerDomain        |            8 |            8 |            8 |            8 |            0 |
+| eventsBound                    |           47 |           47 |           47 |           47 |            0 |
+| eventsDispatched               |            0 |            0 |            0 |            0 |            0 |
+| eventsScrollBound              |            0 |            0 |            0 |            0 |            0 |
+| globalVariables                |           28 |           28 |           28 |           28 |            0 |
+| globalVariablesFalsy           |            1 |            1 |            1 |            1 |            0 |
+| headersCount                   |          114 |          114 |          114 |          114 |            0 |
+| headersSentCount               |           23 |           23 |           23 |           23 |            0 |
+| headersRecvCount               |           91 |           91 |           91 |           91 |            0 |
+| headersSize [bytes]            |         3376 |         3376 |         3376 |         3376 |            0 |
+| headersSentSize [bytes]        |          897 |          897 |          897 |          897 |            0 |
+| headersRecvSize [bytes]        |         2479 |         2479 |         2479 |         2479 |            0 |
+| headersBiggerThanContent       |            0 |            0 |            0 |            0 |            0 |
+| jQueryVersion                  |          NaN |          NaN |          NaN |          NaN |          NaN |
+| jQueryVersionsLoaded           |            1 |            1 |            1 |            1 |            0 |
+| jQueryOnDOMReadyFunctions      |            0 |            0 |            0 |            0 |            0 |
+| jQueryWindowOnLoadFunctions    |            1 |            1 |            1 |            1 |            0 |
+| jQuerySizzleCalls              |           12 |           15 |         12.6 |           12 |          1.2 |
+| jQueryEventTriggers            |           18 |           18 |           18 |           18 |            0 |
+| jQueryDOMReads                 |           89 |           89 |           89 |           89 |            0 |
+| jQueryDOMWrites                |           62 |           62 |           62 |           62 |            0 |
+| jQueryDOMWriteReadSwitches     |            5 |            5 |            5 |            5 |            0 |
+| documentWriteCalls             |            0 |            0 |            0 |            0 |            0 |
+| evalCalls                      |            0 |            0 |            0 |            0 |            0 |
+| jsErrors                       |            1 |            1 |            1 |            1 |            0 |
+| closedConnections              |            0 |            0 |            0 |            0 |            0 |
+| lazyLoadableImagesBelowTheFold |            0 |            0 |            0 |            0 |            0 |
+| localStorageEntries            |            0 |            0 |            0 |            0 |            0 |
+| redirects                      |            0 |            0 |            0 |            0 |            0 |
+| redirectsTime [ms]             |            0 |            0 |            0 |            0 |            0 |
+| repaints                       |            0 |            0 |            0 |            0 |            0 |
+| firstPaint [ms]                |            0 |            0 |            0 |            0 |            0 |
+| requestsToFirstPaint           |            0 |            0 |            0 |            0 |            0 |
+| domainsToFirstPaint            |            0 |            0 |            0 |            0 |            0 |
+| requestsToDomContentLoaded     |            7 |            7 |            7 |            7 |            0 |
+| domainsToDomContentLoaded      |            1 |            1 |            1 |            1 |            0 |
+| requestsToDomComplete          |            8 |            8 |            8 |            8 |            0 |
+| domainsToDomComplete           |            1 |            1 |            1 |            1 |            0 |
+| assetsNotGzipped               |            0 |            0 |            0 |            0 |            0 |
+| assetsWithQueryString          |            0 |            0 |            0 |            0 |            0 |
+| assetsWithCookies              |            0 |            0 |            0 |            0 |            0 |
+| smallImages                    |            2 |            2 |            2 |            2 |            0 |
+| smallCssFiles                  |            0 |            0 |            0 |            0 |            0 |
+| smallJsFiles                   |            0 |            0 |            0 |            0 |            0 |
+| multipleRequests               |            0 |            0 |            0 |            0 |            0 |
+| timeToFirstCss [ms]            |          103 |         1456 |          395 |          122 |       531.22 |
+| timeToFirstJs [ms]             |          188 |         1520 |        484.2 |          215 |       519.45 |
+| timeToFirstImage [ms]          |           68 |         1387 |        359.2 |          101 |       515.11 |
+| domInteractive [ms]            |          350 |          881 |        469.6 |          373 |       206.35 |
+| domContentLoaded [ms]          |          350 |          881 |        470.2 |          374 |       206.07 |
+| domContentLoadedEnd [ms]       |          353 |         2479 |       1561.8 |         1660 |       682.95 |
+| domComplete [ms]               |          353 |          884 |        544.2 |          397 |       214.38 |
+| timeBackend [%]                |            4 |           61 |         20.2 |            9 |        20.99 |
+| timeFrontend [%]               |           39 |           96 |         79.8 |           91 |        20.99 |
+| statusCodesTrail               |          NaN |          NaN |          NaN |          NaN |          NaN |
+| windowAlerts                   |            0 |            0 |            0 |            0 |            0 |
+| windowConfirms                 |            0 |            0 |            0 |            0 |            0 |
+| windowPrompts                  |            0 |            0 |            0 |            0 |            0 |
+| bodyHTMLSize [bytes]           |        11802 |        11802 |        11802 |        11802 |            0 |
+| iframesCount                   |            0 |            0 |            0 |            0 |            0 |
+| smallestResponse [bytes]       |          395 |          395 |          395 |          395 |            0 |
+| biggestResponse [bytes]        |       111189 |       124711 |     114142.2 |       111189 |      5306.32 |
+| fastestResponse [ms]           |           29 |           67 |         44.8 |           41 |        13.45 |
+| slowestResponse [ms]           |          156 |         1378 |        476.8 |          205 |       464.52 |
+| smallestLatency [ms]           |           29 |           50 |         37.8 |           36 |         8.11 |
+| biggestLatency [ms]            |          113 |         1373 |        421.6 |          122 |       486.71 |
+| medianResponse [ms]            |         45.5 |           94 |         67.9 |         63.5 |        18.26 |
+| medianLatency [ms]             |         31.5 |         72.5 |         52.5 |           56 |        16.07 |
+'-----------------------------------------------------------------------------------------------------------'

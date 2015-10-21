@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+git config --global push.followTags true
+
+ROOT_PATH=$(git rev-parse --show-toplevel)
+cd $ROOT_PATH
+
+TAG=$(git describe | cut -d '-' -f 1)
+ASK="increase version "$TAG" ? "
+exec < /dev/tty
+read -p "$ASK" vuser
+if [ -z "$vuser" ]; then
+ 	echo "leave current version "$TAG
+else
+ 	git tag -a $vuser -m "version "$vuser
+ 	ASK="enter description: "
+ 	read -p "$ASK" desc
+ 	echo '* '$(date +%Y-%m-%d)' - '$vuser' : '$desc | cat - CHANGELOG > temp && mv temp CHANGELOG
+ 	git add ./CHANGELOG
+fi
+exit 0
