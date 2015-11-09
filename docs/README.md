@@ -1,9 +1,7 @@
-[Où est mon bus ?](https://ben365.github.io/ouestmonbus/) <- version hébergée par github
-
 Introduction
 ============
 
-![Logo](/apple-touch-icon-precomposed.png "Logo")
+![Logo](../apple-touch-icon-precomposed.png "Logo")
 
 [Où est mon bus ?](http://ouestmonbus.com) est une carte interactive en ligne basée sur OpenStreetMap et les données OpenData de Rennes Métropole.
 
@@ -37,7 +35,7 @@ Une version sur le store (Android dans un premier temps, est en cours de prépar
 Fonctionnalités détaillées:
 ===========================
 
-* Les arrêts de bus sont affichés avec le symbole ![bus](/images/picto/22/station.png "bus") si un bus est prévu avant la fin du la journée.
+* Les arrêts de bus sont affichés avec le symbole ![bus](../images/picto/22/station.png "bus") si un bus est prévu avant la fin du la journée.
 * Pour obtenir de meilleurs performances d'affichage et une meilleure visibilité, lorsque le zoom est inférieur à 16 sur la carte, les arrêts sont regroupés dans des bulles.
 * Les horaires indiqués sont récupérés via les services du STAR et sont en temps réel.
 * Les trajets des lignes de l'arrêt sont affichés sur la carte avec leurs couleurs.
@@ -69,9 +67,7 @@ Fonctionnement technique et développement:
 
 Vous voulez modifier, copier, distribuer, [Où est mon bus ?](http://ouestmonbus.com) ?
 
-Vous pouvez, en respectant la [licence GPL](http://www.gnu.org/licenses/gpl-3.0.fr.html) ! ([version complète licence](/COPYING))
-
-Les sources de la version en ligne sont téléchargeables sous forme d'archive [ici](/ouestmonbus.zip). 
+Vous pouvez, en respectant la [licence GPL](http://www.gnu.org/licenses/gpl-3.0.fr.html) ! ([version complète licence](../COPYING))
 
 Voici quelques explications sur le fonctionnement du logiciel.
 
@@ -113,7 +109,7 @@ Le format est le suivant:
 
 Pour m'aider au traitement des données j'ai réalisé un schéma au début de mon développement:
 
-![schéma](/docs/desc.png "schéma des données")
+![schéma](./desc.png "schéma des données")
 
 Un script télécharge automatiquement les derniers fichiers et génère les données suivantes:
 
@@ -182,7 +178,7 @@ Crédits:
 
 © Copyright 2015 - [Benoît Meunier](mailto:ouestmonbus@systemd.info) & Karin Cibard.
 
-![licence GPL](/images/gplv3.png "licence GPL")
+![licence GPL](../images/gplv3.png "licence GPL")
 [Où est mon bus ?](http://ouestmonbus.com) est un logiciel libre sous [licence GPL](http://www.gnu.org/licenses/gpl-3.0.fr.html).
 
 * Les données des horaires et les icônes du réseau STAR proviennent de https://data.keolis-rennes.com et https://data.explore.star.fr/explore/.
