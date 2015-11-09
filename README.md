@@ -1,4 +1,4 @@
-[Où est mon bus ?](ben365.github.io/ouestmonbus/) <- version hébergée par github
+[Où est mon bus ?](https://ben365.github.io/ouestmonbus/) <- version hébergée par github
 
 Introduction
 ============
