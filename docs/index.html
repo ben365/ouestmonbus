@@ -73,7 +73,7 @@
   });
 
   $.ajax({
-    url: "../README.md"
+    url: "./README.md"
   }).done(function(data)
   {
     $("#readme").html(marked(data));
