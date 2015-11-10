@@ -2744,25 +2744,25 @@ a {
   font-family: "PT Serif Caption";
   font-style: normal;
   font-weight: 400;
-  src: local("Cambria"), local("PT Serif Caption"), local("PTSerif-Caption"), url(./fonts/font1.woff) format('woff');
+  src: local("Cambria"), local("PT Serif Caption"), local("PTSerif-Caption"), url(../fonts/font1.woff) format('woff');
 }
 @font-face {
   font-family: "Open Sans Light";
   font-style: normal;
   font-weight: 300;
-  src: local("Segoe UI Light"), local("Open Sans Light"), local("OpenSans-Light"), url(./fonts/font2.woff) format('woff');
+  src: local("Segoe UI Light"), local("Open Sans Light"), local("OpenSans-Light"), url(../fonts/font2.woff) format('woff');
 }
 @font-face {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
-  src: local("Segoe UI"), local("Open Sans"), local("OpenSans"), url(./fonts/font3.woff) format('woff');
+  src: local("Segoe UI"), local("Open Sans"), local("OpenSans"), url(../fonts/font3.woff) format('woff');
 }
 @font-face {
   font-family: "Open Sans Bold";
   font-style: normal;
   font-weight: 700;
-  src: local("Segoe UI Bold"), local("Open Sans Bold"), local("OpenSans-Bold"), url(./fonts/font4.woff) format('woff');
+  src: local("Segoe UI Bold"), local("Open Sans Bold"), local("OpenSans-Bold"), url(../fonts/font4.woff) format('woff');
 }
 .dropdown-toggle {
   position: relative;
