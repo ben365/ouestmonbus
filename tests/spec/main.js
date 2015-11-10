@@ -241,22 +241,22 @@ describe("Ouestmonbus", function() {
       });
 
       it("picto 5", function() {
-        var expected = "<img src='https://ouestmonbus.xyz/images/picto/22/0001.png' height='22' width='22' alt='1' style='margin-right:2px;'>";
+        var expected = "<img src='./images/picto/22/0001.png' height='22' width='22' alt='1' style='margin-right:2px;'>";
         expect(trafficInfo.getPictoHtml("1")).toEqual(expected);
       });
 
       it("picto C4", function() {
-        var expected = "<img src='https://ouestmonbus.xyz/images/picto/22/0004.png' height='22' width='22' alt='C4' style='margin-right:2px;'>";
+        var expected = "<img src='./images/picto/22/0004.png' height='22' width='22' alt='C4' style='margin-right:2px;'>";
         expect(trafficInfo.getPictoHtml("C4")).toEqual(expected);
       });
 
       it("picto 14", function() {
-        var expected = "<img src='https://ouestmonbus.xyz/images/picto/22/0014.png' height='22' width='22' alt='14' style='margin-right:2px;'>";
+        var expected = "<img src='./images/picto/22/0014.png' height='22' width='22' alt='14' style='margin-right:2px;'>";
         expect(trafficInfo.getPictoHtml("14")).toEqual(expected);
       });
 
       it("picto 76", function() {
-        var expected = "<img src='https://ouestmonbus.xyz/images/picto/22/0076.png' height='22' width='22' alt='76' style='margin-right:2px;'>";
+        var expected = "<img src='./images/picto/22/0076.png' height='22' width='22' alt='76' style='margin-right:2px;'>";
         expect(trafficInfo.getPictoHtml("76")).toEqual(expected);
       });
 
@@ -266,79 +266,79 @@ describe("Ouestmonbus", function() {
       });
 
       it("ligne 14", function() {
-        var expected = "<img src='https://ouestmonbus.xyz/images/picto/22/0014.png' height='22' width='22' alt='14' style='margin-right:2px;'>";
+        var expected = "<img src='./images/picto/22/0014.png' height='22' width='22' alt='14' style='margin-right:2px;'>";
         expect(trafficInfo.formatDetail("ligne 14 ")).toEqual(expected);
       });
 
       it("ligne 59", function() {
-        var expected = "<img src='https://ouestmonbus.xyz/images/picto/22/0059.png' height='22' width='22' alt='59' style='margin-right:2px;'>";
+        var expected = "<img src='./images/picto/22/0059.png' height='22' width='22' alt='59' style='margin-right:2px;'>";
         expect(trafficInfo.formatDetail("ligne 59 ")).toEqual(expected);
       });
       it("ligne 41", function() {
-        var expected = "<img src='https://ouestmonbus.xyz/images/picto/22/0041.png' height='22' width='22' alt='41' style='margin-right:2px;'>";
+        var expected = "<img src='./images/picto/22/0041.png' height='22' width='22' alt='41' style='margin-right:2px;'>";
         expect(trafficInfo.formatDetail("ligne 41 ")).toEqual(expected);
       });
       it("ligne 41express", function() {
-        var expected = "<img src='https://ouestmonbus.xyz/images/picto/22/0041.png' height='22' width='22' alt='41' style='margin-right:2px;'>";
+        var expected = "<img src='./images/picto/22/0041.png' height='22' width='22' alt='41' style='margin-right:2px;'>";
         expect(trafficInfo.formatDetail("ligne 41express ")).toEqual(expected);
       });
 
       it("ligne c4", function() {
-        var expected = "<img src='https://ouestmonbus.xyz/images/picto/22/0004.png' height='22' width='22' alt='C4' style='margin-right:2px;'>";
+        var expected = "<img src='./images/picto/22/0004.png' height='22' width='22' alt='C4' style='margin-right:2px;'>";
         expect(trafficInfo.formatDetail("ligne c4 ")).toEqual(expected);
       });
 
       it("Ligne 14 vers Stade Rennais", function() {
-        var expected = "<img src='https://ouestmonbus.xyz/images/picto/22/0014.png' height='22' width='22' alt='14' style='margin-right:2px;'> vers Stade Rennais";
+        var expected = "<img src='./images/picto/22/0014.png' height='22' width='22' alt='14' style='margin-right:2px;'> vers Stade Rennais";
         expect(trafficInfo.formatDetail("Ligne 14 vers Stade Rennais")).toEqual(expected);
       });
 
       it("ligne 5", function() {
-        var expected = "<img src='https://ouestmonbus.xyz/images/picto/22/0005.png' height='22' width='22' alt='5' style='margin-right:2px;'>";
+        var expected = "<img src='./images/picto/22/0005.png' height='22' width='22' alt='5' style='margin-right:2px;'>";
         expect(trafficInfo.formatDetail("ligne 5 ")).toEqual(expected);
       });
 
       it("ligne 8 double espace avant", function() {
-        var expected = "<img src='https://ouestmonbus.xyz/images/picto/22/0008.png' height='22' width='22' alt='8' style='margin-right:2px;'>";
+        var expected = "<img src='./images/picto/22/0008.png' height='22' width='22' alt='8' style='margin-right:2px;'>";
         expect(trafficInfo.formatDetail("ligne  8 ")).toEqual(expected);
       });
 
       it("Ligne 5", function() {
-        var expected = "<img src='https://ouestmonbus.xyz/images/picto/22/0005.png' height='22' width='22' alt='5' style='margin-right:2px;'>";
+        var expected = "<img src='./images/picto/22/0005.png' height='22' width='22' alt='5' style='margin-right:2px;'>";
         expect(trafficInfo.formatDetail("ligne 5 ")).toEqual(expected);
       });
 
       it("ligne C4", function() {
-        var expected = "<img src='https://ouestmonbus.xyz/images/picto/22/0004.png' height='22' width='22' alt='C4' style='margin-right:2px;'>";
+        var expected = "<img src='./images/picto/22/0004.png' height='22' width='22' alt='C4' style='margin-right:2px;'>";
         expect(trafficInfo.formatDetail("ligne C4 ")).toEqual(expected);
       });
 
       it("Ligne C4", function() {
-        var expected = "bonjour <img src='https://ouestmonbus.xyz/images/picto/22/0004.png' height='22' width='22' alt='C4' style='margin-right:2px;'> parti";
+        var expected = "bonjour <img src='./images/picto/22/0004.png' height='22' width='22' alt='C4' style='margin-right:2px;'> parti";
         expect(trafficInfo.formatDetail("bonjour ligne C4 parti")).toEqual(expected);
       });
 
       it("Ligne 2", function() {
-        var expected = "bonjour <img src='https://ouestmonbus.xyz/images/picto/22/0002.png' height='22' width='22' alt='2' style='margin-right:2px;'> parti";
+        var expected = "bonjour <img src='./images/picto/22/0002.png' height='22' width='22' alt='2' style='margin-right:2px;'> parti";
         expect(trafficInfo.formatDetail("bonjour lignes 2 parti")).toEqual(expected);
       });
 
       it("bonjour les lignes C4 5 76 sont OK", function() {
-        var expected = "bonjour les <img src='https://ouestmonbus.xyz/images/picto/22/0004.png' height='22' width='22' alt='C4' style='margin-right:2px;'>" +
-          "<img src='https://ouestmonbus.xyz/images/picto/22/0005.png' height='22' width='22' alt='5' style='margin-right:2px;'>" +
-          "<img src='https://ouestmonbus.xyz/images/picto/22/0076.png' height='22' width='22' alt='76' style='margin-right:2px;'> sont OK";
+        var expected = "bonjour les <img src='./images/picto/22/0004.png' height='22' width='22' alt='C4' style='margin-right:2px;'>" +
+          "<img src='./images/picto/22/0005.png' height='22' width='22' alt='5' style='margin-right:2px;'>" +
+          "<img src='./images/picto/22/0076.png' height='22' width='22' alt='76' style='margin-right:2px;'> sont OK";
         expect(trafficInfo.formatDetail("bonjour les lignes C4 5 76 sont OK")).toEqual(expected);
       });
 
 
       it("Lignes 56 C4 5 puis les Lignes 12 2 8 sont OK", function() {
         var expected = "" +
-          "<img src='https://ouestmonbus.xyz/images/picto/22/0056.png' height='22' width='22' alt='56' style='margin-right:2px;'>" +
-          "<img src='https://ouestmonbus.xyz/images/picto/22/0004.png' height='22' width='22' alt='C4' style='margin-right:2px;'>" +
-          "<img src='https://ouestmonbus.xyz/images/picto/22/0005.png' height='22' width='22' alt='5' style='margin-right:2px;'> puis les " +
-          "<img src='https://ouestmonbus.xyz/images/picto/22/0012.png' height='22' width='22' alt='12' style='margin-right:2px;'>" +
-          "<img src='https://ouestmonbus.xyz/images/picto/22/0002.png' height='22' width='22' alt='2' style='margin-right:2px;'>" +
-          "<img src='https://ouestmonbus.xyz/images/picto/22/0008.png' height='22' width='22' alt='8' style='margin-right:2px;'> sont OK";
+          "<img src='./images/picto/22/0056.png' height='22' width='22' alt='56' style='margin-right:2px;'>" +
+          "<img src='./images/picto/22/0004.png' height='22' width='22' alt='C4' style='margin-right:2px;'>" +
+          "<img src='./images/picto/22/0005.png' height='22' width='22' alt='5' style='margin-right:2px;'> puis les " +
+          "<img src='./images/picto/22/0012.png' height='22' width='22' alt='12' style='margin-right:2px;'>" +
+          "<img src='./images/picto/22/0002.png' height='22' width='22' alt='2' style='margin-right:2px;'>" +
+          "<img src='./images/picto/22/0008.png' height='22' width='22' alt='8' style='margin-right:2px;'> sont OK";
         expect(trafficInfo.formatDetail("Lignes 56 C4 5 puis les Lignes 12 2 8 sont OK")).toEqual(expected);
       });
 
@@ -377,16 +377,16 @@ describe("Ouestmonbus", function() {
 
   describe("Tests l'url des données de stations", function() {
     it("Tue Aug 06 2015 22:26:16 GMT+0200", function() {
-      expect(app.getDataStationPath(moment("2015-08-06T22:26:16.196+0200"))).toEqual("https://ouestmonbus.xyz/data/today/2015-08-06/stations.geojson");
+      expect(app.getDataStationPath(moment("2015-08-06T22:26:16.196+0200"))).toEqual("./data/today/2015-08-06/stations.geojson");
     });
     it("Tue Aug 23 2015 22:26:16 GMT+0200", function() {
-      expect(app.getDataStationPath(moment("2015-08-23T22:26:16.196+0200"))).toEqual("https://ouestmonbus.xyz/data/today/2015-08-23/stations.geojson");
+      expect(app.getDataStationPath(moment("2015-08-23T22:26:16.196+0200"))).toEqual("./data/today/2015-08-23/stations.geojson");
     });
     it("Tue Aug 26 2015 01:26:16 GMT+0200", function() {
-      expect(app.getDataStationPath(moment("2015-08-26T01:26:16.196+0200"))).toEqual("https://ouestmonbus.xyz/data/today/2015-08-25/stations.geojson");
+      expect(app.getDataStationPath(moment("2015-08-26T01:26:16.196+0200"))).toEqual("./data/today/2015-08-25/stations.geojson");
     });
     it("Tue Aug 26 2015 05:26:16 GMT+0200", function() {
-      expect(app.getDataStationPath(moment("2015-08-26T05:26:16.196+0200"))).toEqual("https://ouestmonbus.xyz/data/today/2015-08-26/stations.geojson");
+      expect(app.getDataStationPath(moment("2015-08-26T05:26:16.196+0200"))).toEqual("./data/today/2015-08-26/stations.geojson");
     });
   });
 

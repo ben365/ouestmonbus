@@ -3464,7 +3464,7 @@ L.Icon.Default.imagePath = (function () {
 	// 		return (path ? path + '/' : '') + 'images';
 	// 	}
 	// }
-	return 'https://ouestmonbus.xyz/images'
+	return './images'
 }());
 
 

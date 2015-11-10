@@ -304,7 +304,7 @@ OuestmonbusApp.prototype.updateDialogPosition = function() {
 OuestmonbusApp.prototype.fetchImgPdf = function() {
 
 	if (this.img_url_localcache_moment === null || this.img_url === null || moment(this.img_url_localcache_moment).diff(moment(), "days") > 0) {
-		var request = pegasus("https://ouestmonbus.xyz/data/img_url.json");
+		var request = pegasus("./data/img_url.json");
 		request.then(
 			function(data) {
 				this.img_url = data;
@@ -546,7 +546,7 @@ OuestmonbusApp.prototype.showHelp = function() {
 	if (this.needHelp) {
 		$.Notify({
 			content: "Cliquez ou tapez sur les icônes " +
-				"<img src='https://ouestmonbus.xyz/images/picto/22/station.png' height='22' width='22' alt='station'> " +
+				"<img src='./images/picto/22/station.png' height='22' width='22' alt='station'> " +
 				"des arrêts de bus pour connaître les prochains passages en temps réel.",
 			icon: "<span class='mif-question'></span>",
 			type: "info",
@@ -605,7 +605,7 @@ OuestmonbusApp.prototype.getDataStationPath = function(now) {
 	}
 
 	var datestr = now.format("YYYY-MM-DD");
-	return "https://ouestmonbus.xyz/data/today/" + datestr + "/stations.geojson";
+	return "./data/today/" + datestr + "/stations.geojson";
 };
 
 /**
@@ -709,7 +709,7 @@ OuestmonbusApp.prototype.displayLines = function(lines) {
 			sensstr = "retour";
 		}
 
-		var request = pegasus("https://ouestmonbus.xyz/data/geo/lines/" + idligne + "/" + sensstr + ".geojson");
+		var request = pegasus("./data/geo/lines/" + idligne + "/" + sensstr + ".geojson");
 		request.then(
 			function(geojsonFeature) {
 				if (_.isUndefined(geojsonFeature.geometry)) {
@@ -744,7 +744,7 @@ OuestmonbusApp.prototype.displayLines = function(lines) {
 OuestmonbusApp.prototype.generatePopupLineContent = function(idligne, sens, couleur, nom) {
 	var href = this.img_url[idligne];
 
-	var html = "<div class='line_info' style='border:0.3rem solid #" + couleur + ";'><img src='https://ouestmonbus.xyz/images/picto/22/" + idligne + ".png' height='22' width='22' alt='" + idligne + "'> " + nom + " (sens " + sens + ")<br>";
+	var html = "<div class='line_info' style='border:0.3rem solid #" + couleur + ";'><img src='./images/picto/22/" + idligne + ".png' height='22' width='22' alt='" + idligne + "'> " + nom + " (sens " + sens + ")<br>";
 
 	if (!_.isUndefined(href)) {
 		html += "<br><a target='_blank' href='" + href + "'>Téléchargement de la fiche horaire</a>";
@@ -776,7 +776,7 @@ OuestmonbusApp.prototype.displayAllStations = function(geoJsonData) {
 		pointToLayer: function(feature, latlng) {
 
 			var busIcon = L.icon({
-				iconUrl: "https://ouestmonbus.xyz/images/picto/22/station.png",
+				iconUrl: "./images/picto/22/station.png",
 				shadowUrl: "",
 				iconSize: [22, 22],
 				shadowSize: [0, 0],
@@ -786,7 +786,7 @@ OuestmonbusApp.prototype.displayAllStations = function(geoJsonData) {
 			});
 
 			var metroIcon = L.icon({
-				iconUrl: "https://ouestmonbus.xyz/images/picto/22/station-metro.png",
+				iconUrl: "./images/picto/22/station-metro.png",
 				shadowUrl: "",
 				iconSize: [22, 22],
 				shadowSize: [0, 0],
@@ -941,7 +941,7 @@ OuestmonbusApp.prototype.deleteAllBusOnMap = function() {
 };
 
 OuestmonbusApp.prototype.generatePopupBusContent = function(idligne, destination) {
-	return "<div class='bus_info'><img src='https://ouestmonbus.xyz/images/picto/22/" + idligne + ".png' height='22' width='22' alt='" + idligne + "'> " +
+	return "<div class='bus_info'><img src='./images/picto/22/" + idligne + ".png' height='22' width='22' alt='" + idligne + "'> " +
 		"<span>" + destination + "</span><br></div>";
 };
 
@@ -1183,8 +1183,8 @@ OuestmonbusApp.prototype.addBusOnMap = function(now, buspos_record_timestamp, ec
 OuestmonbusApp.prototype.addStaticBusIconOnMap = function(idbus, idligne, sens, lat, lng, desc) {
 
 	var busIcon = L.icon({
-		iconUrl: "https://ouestmonbus.xyz/images/picto/22/" + idligne + ".png",
-		shadowUrl: "https://ouestmonbus.xyz/images/picto/22/bus_shadow.png",
+		iconUrl: "./images/picto/22/" + idligne + ".png",
+		shadowUrl: "./images/picto/22/bus_shadow.png",
 		iconSize: [20, 20],
 		shadowSize: [32, 32],
 		iconAnchor: [10, 10],
@@ -1220,8 +1220,8 @@ OuestmonbusApp.prototype.addStaticBusIconOnMap = function(idbus, idligne, sens, 
 OuestmonbusApp.prototype.addBusIconOnMap = function(idbus, parcours, durations, idligne, sens, lat, lng, desc) {
 
 	var busIcon = L.icon({
-		iconUrl: "https://ouestmonbus.xyz/images/picto/22/" + idligne + ".png",
-		shadowUrl: "https://ouestmonbus.xyz/images/picto/22/bus_shadow.png",
+		iconUrl: "./images/picto/22/" + idligne + ".png",
+		shadowUrl: "./images/picto/22/bus_shadow.png",
 		iconSize: [20, 20],
 		shadowSize: [32, 32],
 		iconAnchor: [10, 10],
@@ -1280,13 +1280,13 @@ OuestmonbusApp.prototype.refreshBusCountHtml = function() {
 
 	var content = "";
 	if (bus_count_on_map === 0) {
-		content = "Pas de <img src='https://ouestmonbus.xyz/images/picto/22/bus_shadow.png' height='22' width='22' alt='bus'> sur la carte pour cet arrêt";
+		content = "Pas de <img src='./images/picto/22/bus_shadow.png' height='22' width='22' alt='bus'> sur la carte pour cet arrêt";
 	}
 	if (bus_count_on_map > 1) {
-		content = "Voir les <b>" + bus_count_on_map + "</b> <img src='https://ouestmonbus.xyz/images/picto/22/bus_shadow.png' height='22' width='22' alt='bus'> sur la carte";
+		content = "Voir les <b>" + bus_count_on_map + "</b> <img src='./images/picto/22/bus_shadow.png' height='22' width='22' alt='bus'> sur la carte";
 	}
 	if (bus_count_on_map === 1) {
-		content = "Voir le <img src='https://ouestmonbus.xyz/images/picto/22/bus_shadow.png' height='22' width='22' alt='bus'> sur la carte";
+		content = "Voir le <img src='./images/picto/22/bus_shadow.png' height='22' width='22' alt='bus'> sur la carte";
 	}
 	$("#bus_count").html(content);
 	$("#bus_count").click(this.onBusCountClick.bind(this));
@@ -1377,13 +1377,13 @@ OuestmonbusApp.prototype.getStationUrl = function(marker) {
 
 OuestmonbusApp.prototype.generateImgHtml = function(idligne, sens) {
 	var html = "<a href='#' alt='afficher ligne' onclick='app.bringLineToFront(\"" + idligne + "\",\"" + sens + "\");return false;'>" +
-		"<img src='https://ouestmonbus.xyz/images/picto/22/" + idligne + ".png' height='22' width='22' alt='" + idligne + "'></a> ";
+		"<img src='./images/picto/22/" + idligne + ".png' height='22' width='22' alt='" + idligne + "'></a> ";
 	return html;
 };
 
 OuestmonbusApp.prototype.generateHeaderImgHtml = function(idligne, sens) {
 	var html = "<a href='#' alt='afficher ligne' onclick='app.displayLine(\"" + idligne + "\",\"" + sens + "\");return false;'>" +
-		"<img src='https://ouestmonbus.xyz/images/picto/22/" + idligne + ".png' height='22' width='22' alt='" + idligne + "'></a> ";
+		"<img src='./images/picto/22/" + idligne + ".png' height='22' width='22' alt='" + idligne + "'></a> ";
 	return html;
 };
 
@@ -1497,7 +1497,7 @@ OuestmonbusApp.prototype.generatePopupContent = function(marker, data) {
 		full_content += "</div>";
 		full_content += "<br>";
 		if (!this.isMetroLine(marker.lines)) {
-			full_content += "<button style='width:100%; text-align:center;' id='bus_count'>Pas de <img src='https://ouestmonbus.xyz/images/picto/22/bus_shadow.png' height='22' width='22' alt='bus'> sur la carte pour cet arrêt</button>";
+			full_content += "<button style='width:100%; text-align:center;' id='bus_count'>Pas de <img src='./images/picto/22/bus_shadow.png' height='22' width='22' alt='bus'> sur la carte pour cet arrêt</button>";
 		}
 	}
 	full_content += "</div>";
@@ -1767,7 +1767,7 @@ InfosTrafics.prototype.getPictoHtml = function(picto) {
 		return null;
 	}
 
-	var html = "<img src='https://ouestmonbus.xyz/images/picto/22/" + picto_nb + "' height='22' width='22' alt='" + picto + "' style='margin-right:2px;'>";
+	var html = "<img src='./images/picto/22/" + picto_nb + "' height='22' width='22' alt='" + picto + "' style='margin-right:2px;'>";
 	return html;
 };
 
