@@ -364,7 +364,7 @@ OuestmonbusApp.prototype.initMap = function() {
 	this.map.MAXBOUNDS = maxBounds;
 
 	// Ajout des tuiles
-	var tiles_layer = L.tileLayer("https://ouestmonbus.xyz/osm_tiles/{z}/{x}/{y}.png", {
+	var tiles_layer = L.tileLayer("http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png", {
 		maxZoom: 19,
 		bounds: maxBounds,
 		opacity: 0.75
