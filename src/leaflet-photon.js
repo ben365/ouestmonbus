@@ -53,7 +53,7 @@ L.PhotonSearch = L.PhotonBase.extend({
     includes: L.Mixin.Events,
 
     options: {
-        url: 'http://photon.komoot.de/api/?',
+        url: 'https://photon.komoot.de/api/?',
         placeholder: 'Start typing...',
         minChar: 3,
         limit: 5,
@@ -417,7 +417,7 @@ L.PhotonReverse = L.PhotonBase.extend({
     includes: L.Mixin.Events,
 
     options: {
-        url: 'http://photon.komoot.de/reverse/?',
+        url: 'https://photon.komoot.de/reverse/?',
         limit: 1,
         handleResults: null
     },
