@@ -1082,9 +1082,11 @@ OuestmonbusApp.prototype.addBusOnMap = function(now, buspos_record_timestamp, ec
 		"&dataset=tco-bus-circulation-passages-tr" +
 		"&refine.idbus=" + idbus;
 
+	//console.log(buspos_record_timestamp)
 	var request = pegasus(url_api);
 
 	request.then(function(data) {
+		//console.log(moment(_.first(data.records).record_timestamp))
 		if (data.nhits > 0) {
 
 			var precision = "temps réel";
