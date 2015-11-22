@@ -23,7 +23,7 @@ request({
 				}
 			});
 		});
-		fs.writeFile("../img_url.json", JSON.stringify(response), function(err) {
+		fs.writeFile("../data/img_url.json", JSON.stringify(response), function(err) {
 			if (err) {
 				return console.log(err);
 			}
