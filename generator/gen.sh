@@ -4,7 +4,11 @@ cd "$(dirname "$0")"
 git pull -r -f
 
 node download.js
-node generate.js 1
+for (( c=1; c<=$1; c++ ))
+do
+    node generate.js $c
+done
+
 node newgetpdfurl.js
 
 git add ../data/img_url.json
