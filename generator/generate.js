@@ -52,7 +52,7 @@ var GTFSFileToArray = function(filename, callback) {
 };
 
 var getServiceIdToday = function(date, callback) {
-	var GTFSdir = findGTFSDirectory("../GTFS/", date);
+	var GTFSdir = findGTFSDirectory("../data/GTFS/", date);
 	var gtfsfile = GTFSdir + "calendar.txt";
 	console.log("use " + gtfsfile);
 
@@ -115,7 +115,7 @@ var getServiceIdToday = function(date, callback) {
 
 var getTripFromServiceId = function(date, service_id, callback) {
 
-	var GTFSdir = findGTFSDirectory("../GTFS/", date);
+	var GTFSdir = findGTFSDirectory("../data/GTFS/", date);
 	var gtfsfile = GTFSdir + "trips.txt";
 	console.log("use " + gtfsfile);
 
@@ -137,7 +137,7 @@ var getTripFromServiceId = function(date, service_id, callback) {
 };
 
 var generateStopMap = function(date, trips, callback) {
-	var GTFSdir = findGTFSDirectory("../GTFS/", date);
+	var GTFSdir = findGTFSDirectory("../data/GTFS/", date);
 	var gtfsfile = GTFSdir + "stops.txt";
 	console.log("use " + gtfsfile);
 
@@ -160,7 +160,7 @@ var generateStopMap = function(date, trips, callback) {
 };
 
 var associateTrips = function(date, stops, trips, callback) {
-	var GTFSdir = findGTFSDirectory("../GTFS/", date);
+	var GTFSdir = findGTFSDirectory("../data/GTFS/", date);
 
 	new GTFSFileToArray(GTFSdir + "stop_times.txt", function(stop_times) {
 
@@ -302,7 +302,7 @@ async.waterfall([
 ], function(err, result) {
 	var mkdirp = require("mkdirp");
 
-	var dirname = "../today/" + day.format("YYYY-MM-DD") + "/";
+	var dirname = "../data/today/" + day.format("YYYY-MM-DD") + "/";
 
 	mkdirp(dirname, function(err) {
 		if (err) {

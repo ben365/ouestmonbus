@@ -32,7 +32,7 @@ var GTFSFileToArray = function(filename, callback) {
 
 var result = {};
 
-new GTFSFileToArray("../../images/picto/22/metadata.csv", function(ligne_desc) {
+new GTFSFileToArray("../images/picto/22/metadata.csv", function(ligne_desc) {
 
 	console.log(typeof(ligne_desc));
 
