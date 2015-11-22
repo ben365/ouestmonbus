@@ -28,7 +28,7 @@ var decompressZip = function(filename, date) {
   });
 
   unzipper.extract({
-    path: "../GTFS/" + date.toISOString().split("T")[0]
+    path: "../data/GTFS/" + date.toISOString().split("T")[0]
   });
 };
 
@@ -40,7 +40,7 @@ var decompressZip = function(filename, date) {
  * @param  {string} description - description du GTFS
  */
 var downloadGTFSZip = function(url, feeddate, gtfsstartdate, description) {
-  var filename = "../downloads/" + feeddate.toISOString() + "_" + url.split("/")[url.split("/").length - 1];
+  var filename = "../data/downloads/" + feeddate.toISOString() + "_" + url.split("/")[url.split("/").length - 1];
   //console.log(url + " -> " + filename)
 
   // test si le fichier existe déjà.
