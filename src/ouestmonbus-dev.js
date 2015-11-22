@@ -155,7 +155,29 @@ OuestmonbusApp.prototype.init = function() {
 	this.localisation = new Localization(this, this.map);
 
 	this.initMenuButtons();
+
+	this.orangeAPILogin();
 };
+
+/**
+ * Orange API Login
+ */
+OuestmonbusApp.prototype.orangeAPILogin = function() {
+
+	$.ajax({
+	        type:"POST",
+	        beforeSend: function (request)
+	        {
+	            request.setRequestHeader("Authorization", 'Basic QW51TGFiQlhqdFJGelNBMXNXenBJQVF1dnNGYmczRVk6RU4zbjZuM0d5OUlQT3E3SA');
+	        },
+	        url: "https://api.orange.com/oauth/v2/token",
+	        processData: false,
+	        success: function(msg) {
+	        	console.log(msg);
+	        }
+	});
+};
+
 
 /**
  * Point d'entrée, lorsque la fenêtre est chargé on exécute le programme.
