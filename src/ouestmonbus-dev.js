@@ -1172,8 +1172,9 @@ OuestmonbusApp.prototype.addBusOnMap = function(now, buspos_record_timestamp, ec
 					break;
 				}
 			}
-
 			if (_.size(all_step_parcours) > 1) {
+				lat = all_step_parcours[0].lat;
+				lng = all_step_parcours[0].lng;
 				this.addBusIconOnMap(idbus, all_step_parcours, all_duration_calcuted, idligne, sens, lat, lng, desc_bus);
 			} else {
 				console.log("parcours terminé");
