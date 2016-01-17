@@ -139,7 +139,6 @@ OuestmonbusApp.prototype.init = function() {
 	}.bind(this);
 
 	window.onhashchange = function() {
-		this.updateTwitterLink();
 		this.onHashChange();
 	}.bind(this);
 
@@ -169,8 +168,6 @@ OuestmonbusApp.prototype.start = function() {
 	this.initTwitter();
 
 	var display = function() {
-		this.updateTwitterLink();
-
 		this.getAllTodayStationsData(this.displayAllStations.bind(this));
 	};
 
@@ -190,10 +187,6 @@ OuestmonbusApp.prototype.start = function() {
 			this.moveMapTo(this.map.DEFAULT_POSITION, this.map.DEFAULT_ZOOM, display.bind(this));
 		}
 	}
-};
-
-OuestmonbusApp.prototype.updateTwitterLink = function() {
-	$("#twitter_share").attr("href", "https://twitter.com/intent/tweet?text=O%C3%B9%20est%20mon%20bus%20%3F&tw_p=tweetbutton&url=" + encodeURIComponent(window.location.href));
 };
 
 OuestmonbusApp.prototype.isMapHere = function(latlng, zoom) {
@@ -509,11 +502,6 @@ OuestmonbusApp.prototype.initMenuButtons = function() {
 	}.bind(this));
 	if (this.md.mobile()) {
 		$("#perturbations_btn").unbind("mouseenter mouseleave");
-	}
-
-	// Twitter share
-	if (this.md.mobile()) {
-		$("#twitter_share").unbind("mouseenter mouseleave");
 	}
 
 	// Bouton aide
