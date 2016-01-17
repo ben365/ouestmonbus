@@ -1099,11 +1099,11 @@ OuestmonbusApp.prototype.addBusOnMap = function(now, buspos_record_timestamp, ec
 			var duration_from_getnexdeparture_api = now.diff(_.first(data.records).record_timestamp);
 
 			var desc_bus = "bus " + idbus + "<br>" +
-				"direction " + _.first(data.records).fields.destination + "<br>" +
+				"direction " + _.first(data.records).fields.destination;/* + "<br>" +
 				"prochain arrêt " + _.first(data.records).fields.nomarret + "<br>" +
 				"prévu à " + moment(_.first(data.records).fields.depart).format("HH:mm:ss") + "<br>" +
 				"précision des informations: " + precision + "<br>" +
-				"décalage de l'API et ajustement avec " + Math.round((duration_from_pos+duration_from_getnexdeparture_api)/1000) + "s";
+				"décalage de l'API et ajustement avec " + Math.round((duration_from_pos+duration_from_getnexdeparture_api)/1000) + "s";*/
 
 			_.each(data.records, function(item) {
 
@@ -1688,7 +1688,7 @@ InfosTrafics.prototype.fetchLinesAndAlerts = function() {
 	if (this.linesPicto_cache_moment === null || this.linesPicto === null || moment(this.linesPicto_cache_moment).diff(moment(), "days") > 0) {
 		this.linesPicto = {};
 
-		$.getJSON("https://data.keolis-rennes.com/json/?cmd=getlines&version=2.0&key=GBWOP6EQ50T79VC",
+		$.getJSON("http://data.keolis-rennes.com/json/?cmd=getlines&version=2.0&key=GBWOP6EQ50T79VC",
 			function(data) {
 				if (typeof(data) === "object" && data !== null) {
 					var status = Number(data.opendata.answer.status["@attributes"].code);
@@ -1716,7 +1716,7 @@ InfosTrafics.prototype.fetchLinesAndAlerts = function() {
 
 InfosTrafics.prototype.fetchAlert = function() {
 
-	$.getJSON("https://data.keolis-rennes.com/json/?cmd=getlinesalerts&version=2.0&key=GBWOP6EQ50T79VC",
+	$.getJSON("http://data.keolis-rennes.com/json/?cmd=getlinesalerts&version=2.0&key=GBWOP6EQ50T79VC",
 		function(data) {
 			if (typeof(data) === "object" && data !== null) {
 				var status = Number(data.opendata.answer.status["@attributes"].code);
