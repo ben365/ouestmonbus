@@ -1037,9 +1037,11 @@ OuestmonbusApp.prototype.addBusOnMap = function(now, buspos_record_timestamp, ec
 	// calcul du total du parcour de la ligne
 	var total_latlng_parcours = [];
 	var total_points_parcours = [];
+	var bus_has_parcours = true;
 
 	if (_.size(line_layer.getLayers()) === 0) {
 		console.log("pas de tracé de ligne pour le bus " + idbus);
+		bus_has_parcours =  false;
 	} else {
 		total_latlng_parcours = _.first(line_layer.getLayers())._latlngs;
 		total_latlng_parcours = _.filter(total_latlng_parcours, function(item) {
@@ -1050,9 +1052,18 @@ OuestmonbusApp.prototype.addBusOnMap = function(now, buspos_record_timestamp, ec
 		});
 	}
 
+	var parcours_segments = _.pluck(total_points_parcours, "_latlng");
+	var distance_segments = _.map(parcours_segments, function(value,index){
+		if (index != 0) {
+			return Math.ceil(value.distanceTo(parcours_segments[index-1]));
+		}else{
+			return 0;
+		}
+	});
+
 	// recherche du point de départ
 	var gtotal_point_parcours = L.geoJson(L.layerGroup(total_points_parcours).toGeoJSON());
-	var current_point_on_parcour = _.first(leafletKnn(gtotal_point_parcours).nearest(L.latLng(lat, lng), 1, 350));
+	var current_point_on_parcour = _.first(leafletKnn(gtotal_point_parcours).nearest(L.latLng(lat, lng), 1, _.max(distance_segments)));
 
 	if (!_.isUndefined(current_point_on_parcour)) {
 		index_current_pos = _.findIndex(total_latlng_parcours, function(item) {
@@ -1087,11 +1098,10 @@ OuestmonbusApp.prototype.addBusOnMap = function(now, buspos_record_timestamp, ec
 			var duration_from_getnexdeparture_api = now.diff(_.first(data.records).record_timestamp);
 
 			var desc_bus = "bus " + idbus + "<br>" +
-				"direction " + _.first(data.records).fields.destination;/* + "<br>" +
-				"prochain arrêt " + _.first(data.records).fields.nomarret + "<br>" +
-				"prévu à " + moment(_.first(data.records).fields.depart).format("HH:mm:ss") + "<br>" +
-				"précision des informations: " + precision + "<br>" +
-				"décalage de l'API et ajustement avec " + Math.round((duration_from_pos+duration_from_getnexdeparture_api)/1000) + "s";*/
+				"direction " + _.first(data.records).fields.destination;
+				if(!bus_has_parcours) {
+					desc_bus += "<br><span class='fg-red'>calcul du déplacement impossible</span>";
+				}
 
 			_.each(data.records, function(item) {
 
@@ -1107,7 +1117,7 @@ OuestmonbusApp.prototype.addBusOnMap = function(now, buspos_record_timestamp, ec
 					var lat_next_step = step.coordonnees[0];
 					var lng_next_step = step.coordonnees[1];
 
-					var next_step_point_on_parcour = _.first(leafletKnn(gtotal_point_parcours).nearest(L.latLng(lat_next_step, lng_next_step), 1, 350));
+					var next_step_point_on_parcour = _.first(leafletKnn(gtotal_point_parcours).nearest(L.latLng(lat_next_step, lng_next_step), 1, _.max(distance_segments)));
 
 					// var station_marker_step = L.circleMarker(L.latLng([lat_next_step, lng_next_step]), {
 					// 	color: "#" + line_layer.color
@@ -1160,12 +1170,12 @@ OuestmonbusApp.prototype.addBusOnMap = function(now, buspos_record_timestamp, ec
 					break;
 				}
 			}
-			if (_.size(all_step_parcours) > 1) {
+			if (_.size(all_step_parcours) > 1 && bus_has_parcours) {
 				lat = all_step_parcours[0].lat;
 				lng = all_step_parcours[0].lng;
 				this.addBusIconOnMap(idbus, all_step_parcours, all_duration_calcuted, idligne, sens, lat, lng, desc_bus);
 			} else {
-				console.log("parcours terminé");
+				console.log("pas de calcul de déplacement");
 				this.addStaticBusIconOnMap(idbus, idligne, sens, lat, lng, desc_bus);
 			}
 		}
