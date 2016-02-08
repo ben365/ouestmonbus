@@ -1099,9 +1099,6 @@ OuestmonbusApp.prototype.addBusOnMap = function(now, buspos_record_timestamp, ec
 
 			var desc_bus = "bus " + idbus + "<br>" +
 				"direction " + _.first(data.records).fields.destination;
-				if(!bus_has_parcours) {
-					desc_bus += "<br><span class='fg-red'>calcul du déplacement impossible</span>";
-				}
 
 			_.each(data.records, function(item) {
 
@@ -1203,6 +1200,8 @@ OuestmonbusApp.prototype.addStaticBusIconOnMap = function(idbus, idligne, sens, 
 	marker.sens = sens;
 	marker.idbus = idbus;
 	marker.last_refresh = moment();
+
+	desc += "<br><span class='fg-red'>calcul du déplacement impossible</span>";
 
 	marker.bindPopup(this.generatePopupBusContent(idligne, desc), {
 		closeButton: false,
