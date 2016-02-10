@@ -1054,7 +1054,7 @@ OuestmonbusApp.prototype.addBusOnMap = function(now, buspos_record_timestamp, ec
 
 	var parcours_segments = _.pluck(total_points_parcours, "_latlng");
 	var distance_segments = _.map(parcours_segments, function(value,index){
-		if (index != 0) {
+		if (index !== 0) {
 			return Math.ceil(value.distanceTo(parcours_segments[index-1]));
 		}else{
 			return 0;
