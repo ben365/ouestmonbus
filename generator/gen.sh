@@ -4,7 +4,7 @@ cd "$(dirname "$0")"
 git pull -r -f
 
 node download.js
-for (( c=1; c<=$1; c++ ))
+for (( c=0; c<=$1; c++ ))
 do
     node generate.js $c
 done
