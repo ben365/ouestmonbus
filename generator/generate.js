@@ -96,7 +96,7 @@ var getServiceIdToday = function(date, callback) {
 
 			new GTFSFileToArray(gtfsfile, function(date_line) {
 				_.each(date_line, function(element) {
-					if (moment(element.date, "YYYYMMDD").isSame(date)) {
+					if (moment(element.date, "YYYYMMDD").isSame(date,"day")) {
 						services.push(Number(element.service_id));
 					}
 				});
