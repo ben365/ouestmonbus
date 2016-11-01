@@ -1713,23 +1713,25 @@ InfosTrafics.prototype.fetchLinesAndAlerts = function() {
 
 InfosTrafics.prototype.fetchAlert = function() {
 
-	$.getJSON("http://data.keolis-rennes.com/json/?cmd=getlinesalerts&version=2.0&key=GBWOP6EQ50T79VC",
+	var url_api = "https://data.explore.star.fr/api/records/1.0/search?" +
+        "apikey=3324de385f6b7b5bdfa1727d3e1a9f4bed5dd1accb288db6df5e8487" +
+		"&dataset=tco-busmetro-trafic-alertes-tr" +
+		"&facet=niveau&facet=debutvalidite&facet=finvalidite&facet=idligne&facet=nomcourtligne";
+
+	$.getJSON(url_api,
 		function(data) {
-			if (typeof(data) === "object" && data !== null) {
-				var status = Number(data.opendata.answer.status["@attributes"].code);
-				if (status === 0) {
+			if (typeof(data) === "object" && data !== null && typeof(data.parameters) === "object") {
 					this.save(data);
 				} else {
 					this.app.displayAPIError("Impossible de récupérer les infos trafics (status:" + status + ")");
 				}
-			}
 		}.bind(this)).fail(function() {
 		this.app.displayAPIError("Impossible de récupérer les infos trafics (connect)");
 	}.bind(this));
 };
 
 InfosTrafics.prototype.save = function(data) {
-	this.allInfos = data.opendata.answer.data.alert;
+	this.allInfos = data.records;
 	$("#trafic_dlg_content").html(this.getHtml());
 	this.setCount();
 };
@@ -1754,66 +1756,18 @@ InfosTrafics.prototype.getPictoListHtml = function(pictolist) {
 InfosTrafics.prototype.getPictoHtml = function(picto) {
 
 	if (typeof(picto) === "undefined") {
-		return null;
+		return "";
 	}
-
-	picto = picto.replace(" ", "");
-	picto = picto.replace("picot", "");
-	picto = picto.replace("express", "");
-	picto = picto.toUpperCase();
-
-	var picto_nb = this.linesPicto[picto.toUpperCase()];
-
-	if (typeof(picto_nb) === "undefined") {
-		return null;
+	if (picto === "A") {
+		picto = "LA";
 	}
-
-	var html = "<img src='./images/picto/22/" + picto_nb + "' height='22' width='22' alt='" + picto + "' style='margin-right:2px;'>";
+	var html = "<img src='./images/picto/22/" + picto + ".png' height='22' width='22' alt='" + picto + "' style='margin-right:2px;'>";
 	return html;
 };
 
 InfosTrafics.prototype.formatDetail = function(input) {
 
-	var isLigneString = function(string) {
-		var lStr = string.toLowerCase();
-		var res = (lStr === "ligne" || lStr === "lignes");
-		return res;
-	};
-
-	var all_lines = input.split("\n");
-
-	var all_lines_dest = _.map(all_lines, function(line) {
-		var all_words = line.split(" ");
-
-		// enlève les doubles espaces
-		all_words = _.reject(all_words, function(item) {
-			return item.length === 0;
-		});
-
-		var all_words_dest = _.map(all_words, function(value, index, list) {
-			var res = value;
-			if (isLigneString(value)) {
-				var pictos = this.getPictoListHtml(list.slice(index + 1));
-				if (pictos.length > 0) {
-					res = pictos;
-				}
-			}
-			if ((this.getPictoHtml(value) !== null && typeof(list[index - 1]) === "string" && isLigneString(list[index - 1])) ||
-				(this.getPictoHtml(value) !== null && this.getPictoHtml(list[index - 1]) !== null)) {
-				res = "TODELETE";
-			}
-			return res;
-		}.bind(this));
-
-		all_words_dest = _.reject(all_words_dest, function(item) {
-			return item === "TODELETE";
-		});
-
-		return all_words_dest.join(" ");
-	}.bind(this));
-
-	var html = all_lines_dest.join("\n");
-	return html.replace(/(?:\r\n|\r|\n)/g, "<br>");
+	return input.replace(/(?:\r\n|\r|\n)/g, "<br>");
 };
 
 InfosTrafics.prototype.getHtml = function() {
@@ -1822,15 +1776,12 @@ InfosTrafics.prototype.getHtml = function() {
 		html += "<div class='accordion' data-role='accordion'>";
 		_.each(this.allInfos, function(info) {
 			var div_lines = "<div class='place-right'>";
-			var lines = _.flatten([info.lines.line]);
-			_.each(lines, function(line) {
-				div_lines += this.getPictoHtml(line);
-			}.bind(this));
+			div_lines += this.getPictoHtml(info.fields.idligne);
 			div_lines += "</div>";
 
 			html += "<div class='frame'>";
-			html += "<div class='heading'>" + info.title + div_lines + "</div>";
-			html += "<div class='content'>" + this.formatDetail(info.detail) + "</div>";
+			html += "<div class='heading'>" + info.fields.titre + div_lines + "</div>";
+			html += "<div class='content'>" + this.formatDetail(info.fields.description) + "</div>";
 			html += "</div>";
 		}.bind(this));
 		html += "</div>";
