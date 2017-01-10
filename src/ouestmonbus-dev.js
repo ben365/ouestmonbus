@@ -147,7 +147,9 @@ OuestmonbusApp.prototype.init = function() {
 	this.fetchImgPdf();
 
 	this.infostrafics = new InfosTrafics(this);
-	this.infostrafics.fetchLinesAndAlerts();
+	
+	//Todo migrate to explore API
+	//this.infostrafics.fetchLinesAndAlerts();
 
 	this.initMap();
 
