@@ -642,6 +642,11 @@ OuestmonbusApp.prototype.getAllTodayStationsData = function(onSuccess) {
  */
 OuestmonbusApp.prototype.stationTimeFilter = function(now, limits) {
 
+	// prevent error in GTFS data
+	if (limits === null || limits[0] === null || limits[1] === null) {
+		return false;
+	}
+
 	var now_ajusted = moment(now);
 
 	var morning_start = moment(now).startOf("day");
