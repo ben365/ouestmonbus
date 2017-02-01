@@ -1,7 +1,7 @@
 /**
  * @file ouestmonbus.com main source file.
  * 
- * @copyright Benoît Meunier 2015-2016
+ * @copyright Benoît Simon Meunier 2015-2017
  * 
  * @license
  * ouestmonbus.com is free software: you can redistribute it and/or modify
