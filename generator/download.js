@@ -2,6 +2,7 @@
 
 var fs = require("fs");
 var request = require("request");
+var _ = require("underscore");
 
 console.log("Récupération des dernières données GTFS");
 
@@ -59,7 +60,7 @@ var downloadGTFSZip = function(url, feeddate, gtfsstartdate, description) {
       r.on("end", function() {
         console.log(filename + " saved");
         setTimeout(function(filename, gtfsstartdate) {
-          decompressZip(filename, gtfsstartdate);
+          decompressZip(filename, new Date(gtfsstartdate));
         }.bind(this, filename, gtfsstartdate), 5000);
       });
     } else {
@@ -72,47 +73,18 @@ var downloadGTFSZip = function(url, feeddate, gtfsstartdate, description) {
  * Parse le flux des dernier GTFS disponible
  */
 var getLastGTFS = function() {
-  var FeedParser = require("feedparser");
 
-  var options = {
-    url: "https://data.keolis-rennes.com/fileadmin/OpenDataFiles/GTFS/feed",
-    strictSSL: false
-  };
+  var url = "https://data.explore.star.fr/api/records/1.0/search/?dataset=tco-busmetro-horaires-gtfs-versions-td"
 
-  var req = request(options);
-  var feedparser = new FeedParser();
-
-  req.on("error", function(error) {
-    console.log("Erreur lors de la récupération du flux ATOM" + error);
-  });
-
-  req.on("response", function(res) {
-    var stream = this;
-
-    if (res.statusCode != 200) return this.emit("error", new Error("Bad status code lors de la récupération du flux ATOM"));
-
-    stream.pipe(feedparser);
-  });
-
-
-  feedparser.on("error", function(error) {
-    console.log("Erreur de parsing du flux" + error);
-  });
-
-  feedparser.on("readable", function() {
-    var stream = this;
-    var item;
-
-    while ((item = stream.read()) !== null) {
-      if (typeof(item.enclosures) === "object") {
-        if (item.enclosures[0].type === "application/zip") {
-          var feeddate = new Date(item["atom:updated"]["#"]);
-          var gtfsstartdate = new Date(item["gtfs:start"]["#"]);
-          downloadGTFSZip(item.enclosures[0].url, feeddate, gtfsstartdate, item.description);
-        }
-      }
+  request(url, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      var obj = JSON.parse(body);
+      _.each(obj.records, function(res) {
+        console.log(res.fields.publication)
+        downloadGTFSZip(res.fields.url, new Date(res.fields.publication), res.fields.debutvalidite, res.fields.description);
+      });
     }
   });
-};
+}
 
 getLastGTFS();

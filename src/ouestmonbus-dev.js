@@ -1,7 +1,7 @@
 /**
  * @file ouestmonbus.com main source file.
  * 
- * @copyright Benoît Meunier 2015-2016
+ * @copyright Benoît Simon Meunier 2015-2017
  * 
  * @license
  * ouestmonbus.com is free software: you can redistribute it and/or modify
@@ -147,7 +147,9 @@ OuestmonbusApp.prototype.init = function() {
 	this.fetchImgPdf();
 
 	this.infostrafics = new InfosTrafics(this);
-	this.infostrafics.fetchLinesAndAlerts();
+	
+	//Todo migrate to explore API
+	//this.infostrafics.fetchLinesAndAlerts();
 
 	this.initMap();
 
@@ -358,7 +360,7 @@ OuestmonbusApp.prototype.initMap = function() {
 	this.map.MAXBOUNDS = maxBounds;
 
 	// Ajout des tuiles
-	var tiles_layer = L.tileLayer("http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png", {
+	var tiles_layer = L.tileLayer("https://tiles.ouestmonbus.com/osmfr/{z}/{x}/{y}.png", {
 		maxZoom: 19,
 		bounds: maxBounds,
 		opacity: 0.75
@@ -639,6 +641,11 @@ OuestmonbusApp.prototype.getAllTodayStationsData = function(onSuccess) {
  * @return {boolean} - true si à afficher
  */
 OuestmonbusApp.prototype.stationTimeFilter = function(now, limits) {
+
+	// prevent error in GTFS data
+	if (limits === null || limits[0] === null || limits[1] === null) {
+		return false;
+	}
 
 	var now_ajusted = moment(now);
 
