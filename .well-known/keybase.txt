@@ -1,0 +1,74 @@
+==================================================================
+https://keybase.io/bmeunier
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://ouestmonbus.com
+  * I am bmeunier (https://keybase.io/bmeunier) on keybase.
+  * I have a public key with fingerprint 5342 B83C BA37 1E9C B57F  02FE B285 68D4 21FB A324
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0120c430675d506c97d4f798c4ece0079f709e5a97f3b7d2544776a5a72a104753110a",
+            "fingerprint": "5342b83cba371e9cb57f02feb28568d421fba324",
+            "host": "keybase.io",
+            "key_id": "b28568d421fba324",
+            "kid": "01019b55488ed13d441b3c2f0f4bb27fa27ede8071ff182b0f9aa1be10fe55db2d250a",
+            "uid": "3d6bf40243b647961a53c811d1e28519",
+            "username": "bmeunier"
+        },
+        "service": {
+            "hostname": "ouestmonbus.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1486680839,
+    "expire_in": 157680000,
+    "prev": "339c2804d25291ef22f6af94139ab1bc863f692ef576d57069e1572271966e45",
+    "seqno": 12,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owFtUn1MVWUcBi4twBADJ4MhjgOOhsjOe74PgZAVkq1iUGoY3J33nPeFA9x78d4L
+iciXQKIJoQVZ4tpgygQ0Q0kJTGRoEQYYBmG1YRQjxvwo5PKR1DlM/uv95937+z3P
+8z7Pb79qT4OTm3NrefrtoMWGEOe+P6HTrrq/vfMJaFHyiMh8IhMtXyhLQTa7MVNV
+iEiCBBQpMzTJ8azCkpws8gqDeVGQGSQjkuRFzJMiYiWRxzTkFYplGJ7nJFbiKQmQ
+DM/SAJASEU5g1ZyGrNlW1WzXZFmaoaBAy1CieYBEGbI8JimMICWwnKAwFMBai2I0
+YrrFpjM0c1CyoQjVotW0h3HZ3v/gV3yTQIQsywgCUgCtMAyAtExhEjMQUjyWKB4p
+SCB5gDEQKEhiUZIARIDEiGUVSGlRln3nLMvRCgcxQ1IMDTmGFzkgsbQsAKAApDkA
+og60IatZMiHdlQnlmFVkJQrCCa2aq8pIH6ye5AnCkqON2GQxwxxbhGwxafRsq8Vu
+kS1ZWjPdbs+O1Ln2vGwd/C6CxicyRqiaFW2SGiEXWW2qxUxEAg0p21VdFzACxwmk
+QIvhBNqbrVqRUdURLK9VtaN/g3L1PLQoU7sFktFiUiJAmKIwJ2GRAbQoQQBlgaMx
+J1IIa1SF5UlORJoKRfFA5DjEsISebI/ZoolTmlEpTRO1qWlmyZ5jRUSBxyEX2tXJ
+2c1p/bog16Stl6O+4gPr2opcllbW7ykXffecPNzXrFRei/b6x7OLGCtdrDJ6koYt
+Kd7v+Z8ptAYFzwXHbhoMeHrS8FNgg/FKfVKRo7gIg8SDyndnr0VGt217cLtgvHzS
+t8XrXFb1659OPPzmgMfRhIGp1n+7Hw/FRAd/3TUy19jRbjm9u/JIxSn1/Z75JfeP
+x0IO/XJv544Ubpz98pVrF3/3r49z6vyV3nTC9+TolrBvYdNwa77BVDbqWVo761P5
+clPhrY44w/etuQEtnbV+ybMRVHQJ59ub2HMiJVjAjzrWnuvf3j3YLLh1DL/523r7
+j4kJeX6fBY/kD/XVzJ1sfDzmTsRVt6eev+K9v+xCe2/Z9MgzrvPTO9Ct/Of78Gjt
+5edU0OWISPoiw2XCR3Sp6x0LNMT/kLWwyK5KK2k7+3OAtTX1QWKi3/xHf9zFNQOr
+Vy/cLV06so6uut7QWZ/67Gn/fCln6JJP6P1mfCnkYeCH5Y01Gccybt4Pq/S/fmrD
+YFXAsU98X+ienfbKiJ8KS161tzGq7Hh1z4HQyRvH1c2OF9+K2VMUs68muQ7Mjpnu
+rLEmTTXfc/M+fHB7Ek7v33r1pc97ime6DTPwzEJvxasbE+5kjmc69tkKzicPZD66
++lf/xfHh4Rsd0CO2aSheagkttn6wf9fNPJvYE7h284XRqTdGo3J92zY6aDJ7m3PF
+252OkuSdomkiPaO98GhP/DsRI2nBsRu6ZhzzcT6NXf8B
+=0pYl
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/bmeunier
+
+==================================================================
+
