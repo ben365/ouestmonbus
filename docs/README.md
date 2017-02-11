@@ -132,16 +132,20 @@ Tests:
 
 La [page tests](/tests/) contient des tests unitaires réalisés avec [Jasmine](http://jasmine.github.io/).
 
-Installer votre propre instance de ouestmonbus.com
-==================================================
+Installer votre propre instance de ouestmonbus.com ou forker le projet
+======================================================================
 
-TODO
+- Cloner le répertoire des sources Git à la racine d'un serveur Web.
+- Dans le fichier source ouestmonbus-dev.js changer la valeur apikey par la votre.
+- Installer node.js et les dépendances requises (./generator/package.json)
+- Lancer régulièrement (avec cron) le script "./generator/gen.sh N" avec N pour le nombre de jours de données à générer.
+
+** N'hésiter pas à demander un sous domaine maville.ouestmonbus.com si vous voulez faire une version pour votre ville (benoit@systemd.info **
 
 Reste à faire pour la version en cours:
 =======================================
 
-* notif de nouvelle version
-* afficher une notif quand les données de la ligne ne sont pas dispo
+* Info traffic à basculer sur API Explore.
 
 Partiellement fait:
 -------------------
@@ -152,6 +156,7 @@ Idées de développement pour une future version majeure:
 
 * info trafic contextualisé en fonction des lignes sélectionnées [M]
 
+Implé possible:
   -> implémenter /api/records/1.0/search?dataset=tco-bus-topologie-lignes-td
   -> correspondance nom court - id
   -> filtrage
