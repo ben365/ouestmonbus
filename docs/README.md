@@ -140,7 +140,7 @@ Installer votre propre instance de ouestmonbus.com ou forker le projet
 - Installer node.js et les dépendances requises (./generator/package.json)
 - Lancer régulièrement (avec cron) le script "./generator/gen.sh N" avec N pour le nombre de jours de données à générer.
 
-** N'hésiter pas à demander un sous domaine maville.ouestmonbus.com si vous voulez faire une version pour votre ville (benoit@systemd.info **
+** N'hésiter pas à demander un sous domaine maville.ouestmonbus.com si vous voulez faire une version pour votre ville (benoit@systemd.info) **
 
 Reste à faire pour la version en cours:
 =======================================
