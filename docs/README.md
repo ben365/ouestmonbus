@@ -124,8 +124,8 @@ Un script télécharge automatiquement les derniers fichiers et génère les don
 Tuiles:
 -------
 
-Les tuiles proviennent d'une génération personnelle à partir des données de OpenStreetMap et Mapnik.
-Elles sont hébergées sur le serveur de [Où est mon bus ?](http://ouestmonbus.com).
+Les tuiles proviennent des données de OpenStreetMap et Mapnik.
+Elles sont hébergées sur le serveur de [MapTiles](https://maptiles.xyz/).
 
 Tests:
 ------
