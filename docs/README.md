@@ -135,12 +135,12 @@ La [page tests](/tests/) contient des tests unitaires réalisés avec [Jasmine](
 Installer votre propre instance de ouestmonbus.com ou forker le projet
 ======================================================================
 
-- Cloner le répertoire des sources Git à la racine d'un serveur Web.
-- Dans le fichier source ouestmonbus-dev.js changer la valeur apikey par la votre.
+- Cloner le répertoire des sources [Git](https://github.com/ben365/ouestmonbus.git) à la racine d'un serveur Web.
+- Dans le fichier source ouestmonbus-dev.js changer les valeurs apikey par celle de votre compte [Data Explore](https://data.explore.star.fr/page/home/).
 - Installer node.js et les dépendances requises (./generator/package.json)
 - Lancer régulièrement (avec cron) le script "./generator/gen.sh N" avec N pour le nombre de jours de données à générer.
 
-** N'hésiter pas à demander un sous domaine maville.ouestmonbus.com si vous voulez faire une version pour votre ville (benoit@systemd.info) **
+** N'hésiter pas à demander un sous domaine ville.ouestmonbus.com si vous voulez faire une version pour une autre ville (benoit@systemd.info) **
 
 Reste à faire pour la version en cours:
 =======================================
