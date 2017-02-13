@@ -183,6 +183,8 @@ Crédits:
 
 © Copyright 2015-2017 - [Benoît Simon Meunier](https://keybase.io/bmeunier) & Karin Cibard.
 
+Contact: [ouestmonbus@systemd.info](mailto:ouestmonbus@systemd.info)
+
 ![licence GPL](../images/gplv3.png "licence GPL")
 [Où est mon bus ?](http://ouestmonbus.com) est un logiciel libre sous [licence GPL](http://www.gnu.org/licenses/gpl-3.0.fr.html).
 
