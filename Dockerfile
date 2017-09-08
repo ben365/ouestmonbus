@@ -10,7 +10,7 @@ MAINTAINER Benoit S. Meunier <benoit@systemd.info>
 
 ARG ssh_key_content_github
 
-RUN apk add --no-cache bash nodejs git openssh && \
+RUN apk add --no-cache bash nodejs nodejs-npm git openssh && \
 	git config --global user.name "Ben" && \
 	git config --global user.email "benoit@systemd.info" && \
 	mkdir ~/.ssh && \
