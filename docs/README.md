@@ -181,7 +181,7 @@ Non urgent:
 Crédits:
 ========
 
-© Copyright 2015-2017 - [Benoît Simon Meunier](https://keybase.io/bmeunier) & Karin Cibard.
+© Copyright 2015-2017 - [Benoît](https://keybase.io/bmeunier) & Karin Meunier.
 
 Contact: [ouestmonbus@systemd.info](mailto:ouestmonbus@systemd.info)
 
