@@ -24,9 +24,8 @@ Elle peut être utilisée sans installation, simplement en se rendant sur le sit
 
 ## Mise à jour des données sur ouestmonbus.com ##
 
-Keolis Rennes publie des mises à jour de données (GTFS pour les passages théoriques et la position des stations) via un flux RSS,la mise à jour se fait via un script automatique qui utilise [un container docker](https://github.com/ben365/ouestmonbus/blob/master/Dockerfile):
+Keolis Rennes publie des mises à jour de données (GTFS pour les passages théoriques et la position des stations) via un flux RSS, la mise à jour se fait via un script automatique qui utilise [un container docker](https://github.com/ben365/ouestmonbus/blob/master/Dockerfile):
 
-   docker run ouestmonbus /ouestmonbus/generator/gen.sh [nb de jour à générer]
-
+   `docker run ouestmonbus /ouestmonbus/generator/gen.sh [nb de jour à générer]`
 
 [Documentation détaillée](https://ben365.github.io/ouestmonbus/docs/)
