@@ -42,12 +42,12 @@ var decompressZip = function(filename, date) {
  */
 var downloadGTFSZip = function(url, feeddate, gtfsstartdate, description) {
   var filename = "../data/downloads/" + feeddate.toISOString() + "_" + url.split("/")[url.split("/").length - 1];
-  //console.log(url + " -> " + filename)
+  console.log(url + " -> " + filename)
 
   // test si le fichier existe déjà.
   try {
     fs.lstatSync(filename);
-    //console.log(filename + " est déjà téléchargé")
+    console.log(filename + " est déjà téléchargé")
   } catch (e) {
     if (e.code === "ENOENT") {
       console.log("téléchargement de " + description);
