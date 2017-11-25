@@ -28,8 +28,6 @@ Keolis Rennes publie des mises à jour de données (GTFS pour les passages théo
 
    `docker run ouestmonbus /ouestmonbus/generator/gen.sh [nb de jour à générer]`
 
-[Documentation détaillée](https://ben365.github.io/ouestmonbus/docs/)
-
 ## ouestmonbus.com en application mobile ##
 
 ouestmonbus.com est un site web qui fonctionne sur mobile (avec un navigateur, chrome ou safari par exemple).
@@ -61,3 +59,5 @@ ouestmonbus.com demande beaucoup de bande passante, une solution serait de mettr
 Ami(e)s hacker / codeur si ça vous tente, le code est libre :-)
 
 Pour débugger/analyser le site, un astuce allez sur http://ouestmonbus.com/src/ (version sans compression) et le code source de l'application est ici ou là.
+
+[Documentation détaillée](https://ben365.github.io/ouestmonbus/docs/)
