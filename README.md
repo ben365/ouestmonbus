@@ -30,7 +30,7 @@ Keolis Rennes publie des mises à jour de données (GTFS pour les passages théo
 
 [Documentation détaillée](https://ben365.github.io/ouestmonbus/docs/)
 
-## ouestmonbus appli mobile ##
+## ouestmonbus.com en application mobile ##
 
 ouestmonbus.com est un site web qui fonctionne sur mobile (avec un navigateur, chrome ou safari par exemple).
 
