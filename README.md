@@ -30,11 +30,11 @@ Keolis Rennes publie des mises à jour de données (GTFS pour les passages théo
 
 ## ouestmonbus.com en application mobile ##
 
-ouestmonbus.com est un site web qui fonctionne sur mobile (avec un navigateur, chrome ou safari par exemple), il est [responsive  design](https://fr.wikipedia.org/wiki/Site_web_adaptatif)
+ouestmonbus.com est un site web qui fonctionne sur mobile (avec un navigateur, chrome ou safari par exemple), il est [responsive  design](https://fr.wikipedia.org/wiki/Site_web_adaptatif).
 
 Il est possible de faire un wrapper (c’est à dire une appli qui va juste afficher la page web), je l’ai expérimenté avec le service [gonative.io](https://gonative.io/), ça fonctionne: https://gonative.io/share/qlmya.
 
-Vous pouvez telecharger la version application sur [gonative.io](https://gonative.io/share/qlmya), il n'est pas prévu de publier cette application sur les stores d'applications.
+Vous pouvez télécharger la version application sur [gonative.io](https://gonative.io/share/qlmya), il n'est pas prévu de publier cette application sur les stores d'applications.
 
 ## Documentation détaillée ##
 
