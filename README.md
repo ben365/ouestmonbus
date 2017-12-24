@@ -30,34 +30,12 @@ Keolis Rennes publie des mises à jour de données (GTFS pour les passages théo
 
 ## ouestmonbus.com en application mobile ##
 
-ouestmonbus.com est un site web qui fonctionne sur mobile (avec un navigateur, chrome ou safari par exemple).
-
-On m’a sollicité plusieurs fois pour le transformer en application mobile.
-
-Je ne pense pas le faire car le site fonctionne déjà sur mobile sans avoir besoin de passer par une appli (et je n'ai plus beaucoup de temps libre en ce moment).
-
-J’ai réalisé ce projet, pour mon usage personnel, je prends le bus au quotidien, et la version sous forme de site web me convient très bien.
-
-J’ai développé ce projet en rendant le code source libre, sous licence GPL, ce qui signifie que vous avez le droit de copier/modifier/distribuer/vendre ce projet en respectant certaines conditions comme:
-
-* garder le projet libre
-* distribuer le code source modifié
-* ..
-
-Voir [Licence publique générale GNU sur Wikipedia](https://fr.wikipedia.org/wiki/Licence_publique_g%C3%A9n%C3%A9rale_GNU) et [Guide rapide de la GPLv3](http://www.gnu.org/licenses/quick-guide-gplv3.fr.html).
-
-Pour moi ça reste dans la philosophie de toutes les librairies que j’ai utilisé pour faire ce site, à savoir (Leaflet, Metro UI CSS, jQuery,…) et les données que j’utilise c’est à dire OpenStreetMap et l’opendata de Data Keolis Rennes Métropole.
-
-Je vous encourage donc à faire l’application mobile si vous le souhaitez.
+ouestmonbus.com est un site web qui fonctionne sur mobile (avec un navigateur, chrome ou safari par exemple), il est [responsive  design](https://fr.wikipedia.org/wiki/Site_web_adaptatif).
 
 Il est possible de faire un wrapper (c’est à dire une appli qui va juste afficher la page web), je l’ai expérimenté avec le service [gonative.io](https://gonative.io/), ça fonctionne: https://gonative.io/share/qlmya.
 
-Cependant, en pratique il y a quelques soucis, en général quand vous êtes à un arrêt de bus, vous n’êtes pas seul, et la bande passante disponible sur le smartphone peut ne pas être suffisante pour afficher ouestmonbus.com (surtout en zone sans 4G ou/et aux heures de pointe, ça m'est arrivé plusieurs fois).
+Vous pouvez télécharger la version application sur [gonative.io](https://gonative.io/share/qlmya), il n'est pas prévu de publier cette application sur les stores d'applications.
 
-ouestmonbus.com demande beaucoup de bande passante, une solution serait de mettre en cache des données (les scripts, la carte, les arrêts, etc..), mais c’est plus long à faire qu’un simple wrapper.
+## Documentation détaillée ##
 
-Ami(e)s hacker / codeur si ça vous tente, le code est libre :-)
-
-Pour débugger/analyser le site, un astuce allez sur http://ouestmonbus.com/src/ (version sans compression) et le code source de l'application est ici ou là.
-
-[Documentation détaillée](https://ben365.github.io/ouestmonbus/docs/)
+https://ben365.github.io/ouestmonbus/docs/
