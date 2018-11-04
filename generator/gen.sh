@@ -4,13 +4,25 @@ cd "$(dirname "$0")"
 git pull -r -f
 git checkout master
 
-last_day_data=$(curl -u benm365 -s https://data.explore.star.fr/api/records/1.0/search/?dataset=tco-busmetro-horaires-gtfs-versions-td | jq .records[0].fields.finvalidite | sed s/\"//g)
-nb_days=$(( ($(date --date="$last_day_data" +%s) - $(date +%s) )/(60*60*24) ))
+tmp_file=$(mktemp)
+curl -u benm365 -s https://data.explore.star.fr/api/records/1.0/search/?dataset=tco-busmetro-horaires-gtfs-versions-td > "$tmp_file"
+nb_records=$(cat "$tmp_file" | jq '.records | length') 
 
-echo "Generate data for $nb_days days"
+nb_days_to_gen=0
+
+for ((i=0; i<nb_records; i++)); do
+    last_day_data=$(cat "$tmp_file" | jq .records[$i].fields.finvalidite | sed s/\"//g)
+    nb_days=$(( ($(date --date="$last_day_data" +%s) - $(date +%s) )/(60*60*24) ))
+    if [ "$nb_days" -gt "$nb_days_to_gen" ]
+    then
+        nb_days_to_gen=$nb_days
+    fi
+done
+
+echo "Generate data for $nb_days_to_gen days"
 
 node download.js
-for (( c=0; c<=$nb_days; c++ ))
+for (( c=0; c<=$nb_days_to_gen; c++ ))
 do
     node generate.js $c
 done
