@@ -34,5 +34,5 @@ git add ../data/today/
 git commit --no-verify -m "auto add data"
 git push
 git checkout gh-pages
-git merge master
+git merge master -m "merge into master"
 git push
