@@ -156,6 +156,9 @@ OuestmonbusApp.prototype.init = function() {
 	this.localisation = new Localization(this, this.map);
 
 	this.initMenuButtons();
+	
+    var dialog = $("#discontinued_dlg").data("dialog");
+	dialog.open();
 };
 
 
